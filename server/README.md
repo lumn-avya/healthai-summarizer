@@ -8,8 +8,8 @@ The backend is isolated under `server/`; the existing frontend is unchanged.
 cd server
 cp .env.example .env
 npm install
-npx prisma generate
-npx prisma migrate dev --name init
+npm run prisma:generate
+npm run prisma:migrate -- --name init
 npm run dev
 ```
 
@@ -17,8 +17,7 @@ The API listens on `http://localhost:4000`. Until authentication is added, send 
 
 ## Endpoints
 
-`GET /api/health` also checks database connectivity.
-
+- `GET /api/health` — API and database readiness check
 - `GET|PUT /api/profile`
 - `GET|POST /api/vitals`
 - `GET|POST /api/journal`
@@ -27,5 +26,11 @@ The API listens on `http://localhost:4000`. Until authentication is added, send 
 - `GET /api/timeline`
 - `GET /api/specialists?organId=spine`
 - `POST /api/chat/query` with `{ "question": "..." }`
+
+## Build verification
+
+```bash
+npm run build
+```
 
 Report uploads currently store metadata and files locally. OCR/LLM processing should be added behind a service layer before production use. Do not expose uploaded files publicly without authorization.

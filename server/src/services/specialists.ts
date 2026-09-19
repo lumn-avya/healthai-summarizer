@@ -1,4 +1,4 @@
-import type { SpecialistDoctor } from '../../src/types/index.js';
+import type { SpecialistDoctor } from '../types/api.js';
 
 export const specialists: SpecialistDoctor[] = [
   { id: 'doc-1', name: 'Dr. Vivek Raghavan', specialty: 'Senior Consultant Cardiologist', degree: 'MD, DM (Cardiology), FACC', hospital: 'Manipal Hospital, Old Airport Road', distanceKm: 2.8, rating: 4.9, experienceYears: 19, consultationFee: '₹1,000', address: '98 HAL Airport Rd, Kodihalli, Bengaluru', matchingOrgans: ['heart'], teleconsultAvailable: true, nextSlot: 'Tomorrow at 10:30 AM' },

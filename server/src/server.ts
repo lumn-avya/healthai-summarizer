@@ -16,13 +16,21 @@ app.disable('x-powered-by');
 app.use(cors({ origin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173' }));
 app.use(express.json({ limit: '2mb' }));
 app.get('/api/health', async (_req, res) => {
-  try { await prisma.$queryRaw`SELECT 1`; res.json({ status: 'ok', database: 'ok', service: 'healthai-api' }); }
-  catch { res.status(503).json({ status: 'degraded', database: 'unavailable', service: 'healthai-api' }); }
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+    res.json({ status: 'ok', database: 'ok', service: 'healthai-api' });
+  } catch {
+    res.status(503).json({ status: 'degraded', database: 'unavailable', service: 'healthai-api' });
+  }
 });
 app.use('/api', router);
+app.use((_req, res) => res.status(404).json({ error: 'Route not found' }));
 app.use(errorHandler);
 
 const server = app.listen(port, () => console.log(`HealthAI API listening on :${port}`));
-const shutdown = async () => { server.close(); await prisma.$disconnect(); };
+const shutdown = async () => {
+  server.close();
+  await prisma.$disconnect();
+};
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
