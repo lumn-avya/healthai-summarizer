@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import { speakText, stopSpeaking } from '../../services/i18n';
 import { sound } from '../../services/audio';
-import { 
-  Sparkles, 
-  Volume2, 
-  VolumeX, 
-  CheckCircle2, 
-  HelpCircle, 
-  ShieldCheck, 
-  AlertTriangle,
-  ArrowRight,
-  ClipboardList,
-  PhoneCall
-} from 'lucide-react';
+import { Sparkles, Volume2, VolumeX, CheckCircle2, ShieldCheck, ClipboardList, PhoneCall } from 'lucide-react';
 
 interface HealthAISummaryCardProps {
   onNavigateToPrepKit?: () => void;
@@ -23,7 +12,7 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
 }) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
 
-  const fullSummaryText = `HealthAI Holistic Summary for Aarav Sharma: Your overall health profile remains stable and well-managed. Blood pressure averages 124 over 80 millimeters of mercury, indicating effective daily response to Telmisartan. Your three-month blood sugar average, HbA1c, is currently 5.8 percent, demonstrating a positive downward trend from 6.2 percent earlier this year. LDL cholesterol has reduced significantly to 112 milligrams per deciliter with Rosuvastatin. Kidney filtration markers confirm safe renal function. Your lumbar spine MRI shows expected mild cushion dehydration at L4-L5 without nerve compression. Suggested next steps: continue moderate physical activity like badminton, maintain current morning medications, and bring your prepared question checklist to your upcoming cardiology review.`;
+  const fullSummaryText = `HealthAI Holistic Summary for Aarav Sharma: Your overall health profile remains stable and well-managed. Blood pressure averages 124 over 80 millimeters of mercury, indicating steady and effective control with current medications. Recent clinical readings show consistent cardiovascular stability, improved fasting glucose trends, and reassuring renal function. Continue to manage your day-to-day rhythm, monitor changes, and discuss any symptoms with your physician at follow-up.`;
 
   const handleToggleSpeak = () => {
     if (isSpeaking) {
@@ -39,7 +28,6 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
 
   return (
     <section id="summary" className="py-12 border-b border-brand-border">
-      {/* Editorial Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <div>
           <div className="flex items-center gap-3 mb-2">
@@ -69,18 +57,16 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
         </div>
       </div>
 
-      {/* Main Narrative Card */}
       <div className="rounded-2xl glass-panel border border-brand-border bg-[#121217] p-6 sm:p-8 space-y-8 shadow-2xl">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-brand-crimson font-bold uppercase mb-2">
             <Sparkles className="w-4 h-4" /> COMPREHENSIVE PATIENT COMPANION SYNTHESIS
           </div>
           <p className="text-base sm:text-lg text-brand-bone font-serif leading-relaxed italic">
-            "Your overall health profile remains stable and reassuringly well-managed. Blood pressure averages 124/80 mmHg, showing optimal response to your morning Telmisartan. Your 3-month blood sugar average (HbA1c 5.8%) continues its favorable downward slope from 6.2%, confirming pre-diabetes control. Your lipid profile shows significant LDL reduction to 112 mg/dL on Rosuvastatin, while kidney filtration markers remain within safe normal limits."
+            "Your overall health profile remains stable and reassuringly well-managed. Blood pressure averages 124/80 mmHg, showing optimal response to your current medication plan. Recent clinical readings point to consistent cardiovascular stability, improving metabolic markers, and reassuring kidney function. Continued self-monitoring and follow-up discussions remain the right way to sustain this progress."
           </p>
         </div>
 
-        {/* 7.2 Key Findings Highlights Cards */}
         <div>
           <h3 className="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4">
             KEY CLINICAL FINDINGS (LAYMAN HIGHLIGHTS) [#35]
@@ -91,7 +77,7 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
                 <CheckCircle2 className="w-4 h-4" /> CARDIOVASCULAR STABILITY
               </div>
               <p className="text-xs text-brand-sand leading-relaxed">
-                Home vitals confirm resting systolic pressures consistently between 121 and 128 mmHg. No concerning arrhythmias or dizziness reported.
+                Recent readings confirm resting systolic pressures consistently between 121 and 128 mmHg, with no concerning rhythm or dizziness reported.
               </p>
             </div>
 
@@ -100,7 +86,7 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
                 <CheckCircle2 className="w-4 h-4" /> PRE-DIABETES IMPROVEMENT
               </div>
               <p className="text-xs text-brand-sand leading-relaxed">
-                HbA1c lowered from 6.2% in February to 5.8% in August. Fasting glucose is comfortably holding near 104–108 mg/dL.
+                HbA1c lowered from 6.2% in February to 5.8% in August. Fasting glucose remains comfortable near 104–108 mg/dL.
               </p>
             </div>
 
@@ -109,13 +95,12 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
                 <CheckCircle2 className="w-4 h-4" /> MUSCULOSKELETAL BASELINE
               </div>
               <p className="text-xs text-brand-sand leading-relaxed">
-                L4-L5 lumbar scan reflects natural wear-and-tear cushion hydration changes without nerve compression. Safe for core exercises.
+                The current imaging review reflects stable lower-back findings without significant nerve compression or acute worsening.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 7.3 Suggested Next Steps */}
         <div className="p-5 rounded-xl bg-brand-surface border border-white/5 space-y-3">
           <h3 className="text-xs font-mono uppercase tracking-wider text-brand-gold font-bold flex items-center gap-2">
             <ClipboardList className="w-4 h-4" /> SUGGESTED NEXT STEPS FOR YOUR NEXT CLINICAL VISIT [#36]
@@ -123,25 +108,24 @@ export const HealthAISummaryCard: React.FC<HealthAISummaryCardProps> = ({
           <ul className="space-y-2 text-xs sm:text-sm text-brand-sand">
             <li className="flex items-start gap-2">
               <span className="text-brand-gold mt-1">›</span>
-              <span>Review your 90-day HbA1c drop with Dr. Raghavan to confirm ongoing dietary targets.</span>
+              <span>Review your 90-day HbA1c drop with your doctor to confirm ongoing dietary targets.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-brand-gold mt-1">›</span>
-              <span>Discuss low-impact knee exercises or quad strengthening before resuming competitive badminton.</span>
+              <span>Discuss low-impact exercise and recovery planning before resuming more intense activity.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-brand-gold mt-1">›</span>
-              <span>Export your complete 60-Second Doctor Visit Packet to bring as a hard copy or PDF to your clinic appointment.</span>
+              <span>Bring your recent labs and symptom notes to the next visit so the conversation stays organized and focused.</span>
             </li>
           </ul>
         </div>
 
-        {/* 7.4 Safety Guardrail Banner */}
         <div className="p-4 rounded-xl bg-brand-crimson/10 border border-brand-crimson/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
           <div className="flex items-start gap-2.5">
             <ShieldCheck className="w-4 h-4 text-brand-crimson shrink-0 mt-0.5" />
             <div className="text-brand-sand leading-relaxed">
-              <strong>Layman Safety Protocol (Rule 7.4):</strong> HealthAI Summarizer never provides diagnostic determinations, never prescribes dosages, and advises consulting your verified physician for any medication changes.
+              <strong>Layman Safety Protocol (Rule 7.4):</strong> HealthAI Summarizer never provides diagnostic determinations, never prescribes dosages, and advises consulting your verified physician for any treatment decisions.
             </div>
           </div>
 
