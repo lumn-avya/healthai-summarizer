@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { NotificationAlert } from '../../types';
 import { store } from '../../services/storage';
+import { api } from '../../services/api';
 import { sound } from '../../services/audio';
-import { 
-  Bell, 
-  Check, 
-  Calendar, 
-  Sparkles, 
-  AlertCircle, 
+import {
+  Bell,
+  Check,
+  Calendar,
+  Sparkles,
+  AlertCircle,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
 } from 'lucide-react';
 
 interface NotificationCenterProps {
@@ -24,10 +25,15 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
   const [localAlerts, setLocalAlerts] = useState<NotificationAlert[]>(alerts);
   const [filter, setFilter] = useState<'all' | 'unread'>('all');
 
-  const handleMarkRead = (id: string) => {
+  const handleMarkRead = async (id: string) => {
     sound.playClick();
-    store.markAlertRead(id);
-    setLocalAlerts(localAlerts.map((a) => (a.id === id ? { ...a, read: true } : a)));
+    try {
+      await api.markAlertRead(id);
+    } catch (error) {
+      console.error('Alert read update failed:', error);
+      store.markAlertRead(id);
+    }
+    setLocalAlerts((prev) => prev.map((a) => (a.id === id ? { ...a, read: true } : a)));
   };
 
   const filteredAlerts = localAlerts.filter((a) => {
@@ -39,7 +45,6 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
 
   return (
     <section id="alerts" className="py-12 border-b border-brand-border">
-      {/* Editorial Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <div>
           <div className="flex items-center gap-3 mb-2">
@@ -78,7 +83,6 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
         </div>
       </div>
 
-      {/* Alerts Stream */}
       <div className="space-y-4">
         {filteredAlerts.map((alert) => (
           <div
@@ -106,16 +110,10 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
 
               <div>
                 <div className="flex items-center gap-2">
-                  <h4 className="text-base font-bold font-display text-brand-bone">
-                    {alert.title}
-                  </h4>
-                  {!alert.read && (
-                    <span className="w-2 h-2 rounded-full bg-brand-crimson animate-pulse" />
-                  )}
+                  <h4 className="text-base font-bold font-display text-brand-bone">{alert.title}</h4>
+                  {!alert.read && <span className="w-2 h-2 rounded-full bg-brand-crimson animate-pulse" />}
                 </div>
-                <p className="text-xs sm:text-sm text-brand-sand/90 mt-1 max-w-2xl leading-relaxed">
-                  {alert.message}
-                </p>
+                <p className="text-xs sm:text-sm text-brand-sand/90 mt-1 max-w-2xl leading-relaxed">{alert.message}</p>
                 <div className="text-[11px] font-mono text-brand-muted mt-1.5">
                   {new Date(alert.timestamp).toLocaleDateString()} at{' '}
                   {new Date(alert.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -130,7 +128,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                     sound.playClick();
                     onActionClick(alert.actionTarget!);
                   }}
-                  className="px-4 py-2 rounded-xl bg-brand-crimson hover:bg-brand-crimson-bright text-white text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-brand-crimson/20"
+                  className="px-4 py-2 rounded-xl bg-brand-crimson hover:bg-brand-crimson-bright text-white text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-2"
                 >
                   <span>{alert.actionLabel}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

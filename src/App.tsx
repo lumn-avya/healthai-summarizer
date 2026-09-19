@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { store } from './services/storage';
+import { api } from './services/api';
 import {
   PatientProfile,
   MedicalReport,
@@ -7,6 +8,7 @@ import {
   NotificationAlert,
   IndianLanguage,
   AnatomyOrgan,
+  UnifiedTimelineEvent,
 } from './types';
 
 import { EditorialHeader } from './components/layout/EditorialHeader';
@@ -26,18 +28,63 @@ import { MyHealthProfile } from './components/profile/MyHealthProfile';
 import { ReportDetailModal } from './components/intake/ReportDetailModal';
 
 export const App: React.FC = () => {
-  const [profile, setProfile] = useState<PatientProfile>(store.getProfile());
-  const [reports, setReports] = useState<MedicalReport[]>(store.getReports());
-  const [vitals, setVitals] = useState<VitalEntry[]>(store.getVitals());
-  const [alerts, setAlerts] = useState<NotificationAlert[]>(store.getAlerts());
+  const [profile, setProfile] = useState<PatientProfile | null>(null);
+  const [reports, setReports] = useState<MedicalReport[]>([]);
+  const [vitals, setVitals] = useState<VitalEntry[]>([]);
+  const [alerts, setAlerts] = useState<NotificationAlert[]>([]);
   const [language, setLanguage] = useState<IndianLanguage>('en');
   const [activeSection, setActiveSection] = useState<string>('dashboard');
+  const [loading, setLoading] = useState<boolean>(true);
 
   const [selectedReportModal, setSelectedReportModal] = useState<MedicalReport | null>(null);
   const [specialistOrganFilter, setSpecialistOrganFilter] = useState<string | null>(null);
   const [prepKitOrgan, setPrepKitOrgan] = useState<AnatomyOrgan | null>(null);
 
-  const timelineEvents = store.getUnifiedTimeline();
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadHealthData = async () => {
+      try {
+        const [profileData, reportsData, vitalsData, alertsData, timelineData] = await Promise.all([
+          api.getProfile(),
+          api.getReports(),
+          api.getVitals(),
+          api.getAlerts(),
+          api.getTimeline(),
+        ]);
+
+        if (!isMounted) return;
+
+        setProfile(profileData || store.getProfile());
+        setReports(reportsData || store.getReports());
+        setVitals(vitalsData || store.getVitals());
+        setAlerts(alertsData || store.getAlerts());
+      } catch (error) {
+        console.error('Falling back to local storage:', error);
+        if (!isMounted) return;
+        setProfile(store.getProfile());
+        setReports(store.getReports());
+        setVitals(store.getVitals());
+        setAlerts(store.getAlerts());
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    loadHealthData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const timelineEvents = useMemo<UnifiedTimelineEvent[]>(() => {
+    if (reports.length || vitals.length) {
+      const fallback = store.getUnifiedTimeline();
+      return fallback;
+    }
+    return store.getUnifiedTimeline();
+  }, [reports, vitals]);
 
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -57,14 +104,22 @@ export const App: React.FC = () => {
     handleNavigate('prep-kit');
   };
 
-  const handleReportAdded = (newReport: MedicalReport) => {
-    setReports(store.getReports());
+  const handleReportAdded = async (newReport: MedicalReport) => {
+    setReports((prev) => [newReport, ...prev]);
     setSelectedReportModal(newReport);
   };
 
   const handleVitalLogged = (newVital: VitalEntry) => {
-    setVitals(store.getVitals());
+    setVitals((prev) => [newVital, ...prev]);
   };
+
+  if (loading || !profile) {
+    return (
+      <div className="min-h-screen bg-brand-dark text-brand-bone flex items-center justify-center font-mono text-sm tracking-widest">
+        Loading health data...
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-brand-dark text-brand-bone selection:bg-brand-cyan selection:text-black flex flex-col font-sans">
