@@ -1,0 +1,1565 @@
+import { IndianLanguage } from '../types';
+
+export interface TranslationDictionary {
+  appName: string;
+  tagline: string;
+  dashboard: string;
+  anatomy3D: string;
+  documents: string;
+  vitals: string;
+  journal: string;
+  trends: string;
+  specialists: string;
+  prepKit: string;
+  packetExport: string;
+  aiChatbot: string;
+  
+  // Hero
+  heroSubtitle: string;
+  heroTitleStart: string;
+  heroTitleHighlight: string;
+  heroDescription: string;
+  heroLaunch3D: string;
+  heroUploadReport: string;
+  heroGroundedAI: string;
+  
+  // Dashboard
+  myHealthDashboard: string;
+  patientCommandCenter: string;
+  bloodPressure: string;
+  fastingSugar: string;
+  ldlCholesterol: string;
+  kidneyFiltration: string;
+  optimalBand: string;
+  preDiabetic: string;
+  improving: string;
+  healthy: string;
+  aiSummaryBannerTitle: string;
+  aiSummaryBannerText: string;
+  recentReportsTitle: string;
+  uploadNewReport: string;
+  parametersExtracted: string;
+
+  // 3D Anatomy
+  anatomyExplorerTitle: string;
+  anatomyExplorerHighlight: string;
+  anatomyExplorerSubtitle: string;
+  searchSymptomPlaceholder: string;
+  maleModel: string;
+  femaleModel: string;
+  rotateTip: string;
+  regionIdentifier: string;
+  commonSymptomsTitle: string;
+  suggestedQuestionsTitle: string;
+  findNearbySpecialist: string;
+  addQuestionsToPrepKit: string;
+  illustrativeDisclaimer: string;
+
+  // Specialists & Map
+  specialistLocatorTitle: string;
+  specialistLocatorHighlight: string;
+  specialistLocatorSubtitle: string;
+  searchDoctorPlaceholder: string;
+  maxRadius: string;
+  teleconsultation: string;
+  bookSlot: string;
+  consultationFee: string;
+  nextAvailable: string;
+  mapPinTitle: string;
+  mapPinSubtitle: string;
+
+  // Document Intake
+  intakeTitle: string;
+  intakeHighlight: string;
+  intakeSubtitle: string;
+  quickTestPresets: string;
+  dragDropTitle: string;
+  dragDropSubtitle: string;
+  runningOcr: string;
+  saveToPatientRecord: string;
+
+  // Timeline
+  timelineTitle: string;
+  timelineHighlight: string;
+  timelineSubtitle: string;
+  allEvents: string;
+  labReports: string;
+  homeVitals: string;
+  symptomJournal: string;
+
+  // Vitals Tracker
+  vitalsTitle: string;
+  vitalsHighlight: string;
+  vitalsSubtitle: string;
+  photoOcrBannerTitle: string;
+  photoOcrBannerDesc: string;
+  simulatePhotoCapture: string;
+  logMeasurement: string;
+
+  // Journal
+  journalTitle: string;
+  journalHighlight: string;
+  journalSubtitle: string;
+  severitySliderTitle: string;
+  medAdherenceTitle: string;
+  contextTagsTitle: string;
+  saveJournalEntry: string;
+
+  // Trends
+  trendsTitle: string;
+  trendsHighlight: string;
+  trendsSubtitle: string;
+  trendDetection: string;
+  anomalyDetection: string;
+  doctorVisitReadout: string;
+
+  // Doctor Prep Kit
+  prepKitTitle: string;
+  prepKitHighlight: string;
+  prepKitSubtitle: string;
+  step1Title: string;
+  step2Title: string;
+  step3Title: string;
+  step4Title: string;
+  synthesizeQuestionList: string;
+  printChecklist: string;
+
+  // Chatbot
+  chatbotTitle: string;
+  chatbotHighlight: string;
+  chatbotSubtitle: string;
+  chatPlaceholder: string;
+  send: string;
+  safetyNotice: string;
+
+  // Doctor Visit Packet
+  packetTitle: string;
+  packetHighlight: string;
+  printSavePdf: string;
+  physician60SecNotice: string;
+}
+
+export const LANGUAGE_METADATA: Record<IndianLanguage, { name: string; nativeName: string; flag: string; voiceLang: string }> = {
+  en: { name: 'English', nativeName: 'English', flag: '🇬🇧', voiceLang: 'en-IN' },
+  hi: { name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳', voiceLang: 'hi-IN' },
+  bn: { name: 'Bengali', nativeName: 'বাংলা', flag: '🇮🇳', voiceLang: 'bn-IN' },
+  ta: { name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳', voiceLang: 'ta-IN' },
+  te: { name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳', voiceLang: 'te-IN' },
+  mr: { name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳', voiceLang: 'mr-IN' },
+  gu: { name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳', voiceLang: 'gu-IN' },
+  kn: { name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳', voiceLang: 'kn-IN' },
+  ml: { name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳', voiceLang: 'ml-IN' },
+  pa: { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', flag: '🇮🇳', voiceLang: 'pa-IN' },
+  or: { name: 'Odia', nativeName: 'ଓଡ଼ିଆ', flag: '🇮🇳', voiceLang: 'or-IN' },
+};
+
+export const TRANSLATIONS: Record<IndianLanguage, TranslationDictionary> = {
+  en: {
+    appName: 'HealthAI Summarizer',
+    tagline: 'Patient Health Companion & Discovery Hub',
+    dashboard: 'Dashboard',
+    anatomy3D: '3D Anatomy',
+    documents: 'Intake & OCR',
+    vitals: 'Home Vitals',
+    journal: 'Journal',
+    trends: 'Trends',
+    specialists: 'Specialists & Map',
+    prepKit: 'Visit Prep',
+    packetExport: 'Doctor Packet',
+    aiChatbot: 'AI Assistant',
+
+    heroSubtitle: 'PATIENT HEALTH COMPANION // THREE.JS 3D ANATOMY ENGINE',
+    heroTitleStart: 'Your whole health story,',
+    heroTitleHighlight: 'decoded in plain language.',
+    heroDescription: 'No medical jargon. No cold clinical portals. Explore your body in real-time 3D, extract lab tests with AI OCR, track home vitals, and walk into your next doctor consultation with absolute clarity.',
+    heroLaunch3D: 'Launch 3D Anatomy Explorer',
+    heroUploadReport: 'Upload Report / Photo',
+    heroGroundedAI: 'Grounded Assistant',
+
+    myHealthDashboard: 'My Health',
+    patientCommandCenter: 'PATIENT COMMAND CENTER',
+    bloodPressure: 'BLOOD PRESSURE',
+    fastingSugar: 'FASTING SUGAR',
+    ldlCholesterol: 'LDL CHOLESTEROL',
+    kidneyFiltration: 'KIDNEY FILTRATION',
+    optimalBand: 'OPTIMAL',
+    preDiabetic: 'PRE-DIABETIC',
+    improving: 'IMPROVING',
+    healthy: 'HEALTHY',
+    aiSummaryBannerTitle: 'PLAIN-LANGUAGE AI SUMMARY // AUG - SEPT 2026',
+    aiSummaryBannerText: '"Your overall health profile is stable. Blood pressure is well-managed with your morning prescription, and your 3-month sugar average (HbA1c 5.8%) reflects consistent pre-diabetes control. Your recent MRI notes mild lower back cushion wear without nerve pinching."',
+    recentReportsTitle: 'Recent Reports & Scans',
+    uploadNewReport: 'Upload New Report',
+    parametersExtracted: 'Parameters Extracted',
+
+    anatomyExplorerTitle: '3D Interactive',
+    anatomyExplorerHighlight: 'Anatomy Explorer',
+    anatomyExplorerSubtitle: 'Explore organs in high-definition 3D. Search symptoms or tap regions to understand what they do, find verified specialists, and prepare doctor questions.',
+    searchSymptomPlaceholder: 'Type symptom (e.g. knee pain, palpitations, back ache, headache)...',
+    maleModel: 'MALE BODY',
+    femaleModel: 'FEMALE BODY',
+    rotateTip: 'DRAG TO ROTATE • PINCH / SCROLL TO ZOOM • CLICK ORGAN TO INSPECT',
+    regionIdentifier: 'REGION IDENTIFIER',
+    commonSymptomsTitle: 'COMMON SYMPTOMS MAPPED TO THIS REGION',
+    suggestedQuestionsTitle: 'SUGGESTED QUESTIONS FOR YOUR PHYSICIAN',
+    findNearbySpecialist: 'FIND NEARBY SPECIALISTS ON MAP',
+    addQuestionsToPrepKit: 'ADD REGION QUESTIONS TO VISIT PREP KIT',
+    illustrativeDisclaimer: 'Illustrative orientation tool. Never a substitute for clinical diagnostics.',
+
+    specialistLocatorTitle: 'Specialist Locator &',
+    specialistLocatorHighlight: 'Interactive Map',
+    specialistLocatorSubtitle: 'Accredited specialists and clinics pinpointed on an interactive map with red location markers. Deliberately non-ranked to let patients decide.',
+    searchDoctorPlaceholder: 'Search by doctor name, hospital, or specialty...',
+    maxRadius: 'Max Radius',
+    teleconsultation: 'Teleconsultation',
+    bookSlot: 'Book Slot',
+    consultationFee: 'CONSULTATION FEE',
+    nextAvailable: 'Next available',
+    mapPinTitle: 'CLINICAL PINPOINT MAP',
+    mapPinSubtitle: 'Red markers indicate nearby verified specialists',
+
+    intakeTitle: 'Report &',
+    intakeHighlight: 'Document Intake',
+    intakeSubtitle: 'Upload phone photos or lab PDFs up to 50MB. Auto-corrects skewed camera shots, extracts health parameters, and sorts into layman categories.',
+    quickTestPresets: 'Quick-Test Presets (No personal file upload required):',
+    dragDropTitle: 'Drag and drop your report or photo here',
+    dragDropSubtitle: 'Supports lab PDFs, digital prescriptions, or phone camera snapshots (PNG, JPG). Up to 50MB per document.',
+    runningOcr: 'Running Layer 1 Multilingual OCR & Health Parameter Extraction...',
+    saveToPatientRecord: 'Save To Patient Record & Timeline',
+
+    timelineTitle: 'Unified Life',
+    timelineHighlight: 'Timeline',
+    timelineSubtitle: 'Every report, home vitals reading, and symptom journal entry synthesized into one living journey.',
+    allEvents: 'All Life Events',
+    labReports: 'Lab Reports & Scans',
+    homeVitals: 'Home Vitals Logs',
+    symptomJournal: 'Symptom Journal',
+
+    vitalsTitle: 'Home Vitals',
+    vitalsHighlight: 'Tracker',
+    vitalsSubtitle: 'Log what happens between clinical visits. Features high-touch numerical sliders, sensible defaults, and photo monitor OCR.',
+    photoOcrBannerTitle: 'Instant Photo OCR From BP Monitor or Glucometer Screen',
+    photoOcrBannerDesc: 'Photograph your Omron, Accu-Chek, or Dr. Morepen screen to auto-fill numbers.',
+    simulatePhotoCapture: 'Simulate Photo Capture',
+    logMeasurement: 'Log Measurement',
+
+    journalTitle: 'Symptom & Wellness',
+    journalHighlight: 'Journal',
+    journalSubtitle: 'Track daily how you feel with a 0-10 slider, log context tags, and record adherence without complex medical jargon.',
+    severitySliderTitle: 'SYMPTOM DISCOMFORT SEVERITY',
+    medAdherenceTitle: 'MEDICATION ADHERENCE TODAY',
+    contextTagsTitle: 'EVERYDAY CONTEXT TAGS (SELECT ALL THAT APPLY)',
+    saveJournalEntry: 'Save Journal Entry',
+
+    trendsTitle: 'Trends &',
+    trendsHighlight: 'Analytics',
+    trendsSubtitle: 'Continuous tracking beyond single snapshots. Automatic trend and anomaly detection across blood pressure, glucose, and lipids.',
+    trendDetection: 'TREND DETECTION [#20]',
+    anomalyDetection: 'ANOMALY DETECTION [#22]',
+    doctorVisitReadout: 'DOCTOR VISIT READOUT',
+
+    prepKitTitle: 'Doctor Visit',
+    prepKitHighlight: 'Prep Kit',
+    prepKitSubtitle: 'Prepare for your next consultation in 3 minutes. Generates a laser-focused, printable list of questions grounded in your lab results.',
+    step1Title: 'Symptoms & Area',
+    step2Title: 'Duration & Context',
+    step3Title: 'Medications & Habits',
+    step4Title: 'Generated Question List',
+    synthesizeQuestionList: 'Synthesize Question List',
+    printChecklist: 'Print Checklist',
+
+    chatbotTitle: 'Medical Chatbot —',
+    chatbotHighlight: 'Patient Assistant',
+    chatbotSubtitle: 'A plain-language companion grounded in your uploaded tests, vitals, and journal. Enforces non-diagnostic safety rules.',
+    chatPlaceholder: 'Ask anything about your reports, vitals, or doctor visits...',
+    send: 'Send',
+    safetyNotice: 'Grounded in stored reports only. Does not diagnose or prescribe.',
+
+    packetTitle: 'Doctor Visit',
+    packetHighlight: 'Packet (PDF)',
+    printSavePdf: 'Print / Save as PDF',
+    physician60SecNotice: 'PHYSICIAN 60-SEC REVIEW SPEC',
+  },
+  hi: {
+    appName: 'हेल्थएआई समराइज़र',
+    tagline: 'मरीज़ स्वास्थ्य साथी और 3D अन्वेषण',
+    dashboard: 'डैशबोर्ड',
+    anatomy3D: '3D शरीर',
+    documents: 'रिपोर्ट्स OCR',
+    vitals: 'घरेलू वाइटल्स',
+    journal: 'डायरी',
+    trends: 'रुझान',
+    specialists: 'डॉक्टर और नक्शा',
+    prepKit: 'विज़िट तैयारी',
+    packetExport: 'डॉक्टर पैकेट',
+    aiChatbot: 'AI सहायक',
+
+    heroSubtitle: 'मरीज़ स्वास्थ्य साथी // 3D शरीर अन्वेषण इंजन',
+    heroTitleStart: 'आपकी संपूर्ण स्वास्थ्य यात्रा,',
+    heroTitleHighlight: 'सरल और स्पष्ट भाषा में।',
+    heroDescription: 'कोई कठिन मेडिकल शब्द नहीं। अपने शरीर को वास्तविक 3D में देखें, रिपोर्ट्स को AI OCR से पढ़ें, घरेलू ब्लड प्रेशर मापें और डॉक्टर से आत्मविश्वास के साथ मिलें।',
+    heroLaunch3D: '3D शरीर मॉडल शुरू करें',
+    heroUploadReport: 'रिपोर्ट / फोटो अपलोड करें',
+    heroGroundedAI: 'AI स्वास्थ्य सहायक',
+
+    myHealthDashboard: 'मेरा स्वास्थ्य',
+    patientCommandCenter: 'मरीज़ कंट्रोल सेंटर',
+    bloodPressure: 'रक्तचाप (BP)',
+    fastingSugar: 'खाली पेट शुगर',
+    ldlCholesterol: 'कोलेस्ट्रॉल (LDL)',
+    kidneyFiltration: 'गुर्दा कार्यक्षमता',
+    optimalBand: 'उत्तम',
+    preDiabetic: 'प्री-डायबिटिक',
+    improving: 'सुधार जारी',
+    healthy: 'स्वस्थ',
+    aiSummaryBannerTitle: 'सरल भाषा में AI सारांश // अगस्त - सितम्बर 2026',
+    aiSummaryBannerText: '"आपका संपूर्ण स्वास्थ्य स्थिर है। सुबह की दवा से ब्लड प्रेशर नियंत्रित है, और 3 महीने का शुगर औसत (HbA1c 5.8%) लगातार नियंत्रण दर्शा रहा है। कमर का MRI सामान्य खिंचाव दिखाता है।"',
+    recentReportsTitle: 'हालिया रिपोर्ट्स व स्कैन',
+    uploadNewReport: 'नई रिपोर्ट जोड़ें',
+    parametersExtracted: 'पैरामीटर निकाले गए',
+
+    anatomyExplorerTitle: '3D इंटरैक्टिव',
+    anatomyExplorerHighlight: 'शरीर अन्वेषक',
+    anatomyExplorerSubtitle: 'अंगों को हाई-डेफिनिशन 3D में देखें। लक्षण खोजें या अंगों पर क्लिक करके विशेषज्ञ खोजें व डॉक्टर के लिए प्रश्न तैयार करें।',
+    searchSymptomPlaceholder: 'लक्षण लिखें (जैसे घुटना दर्द, सीने में भारीपन, सिरदर्द)...',
+    maleModel: 'पुरुष शरीर',
+    femaleModel: 'महिला शरीर',
+    rotateTip: 'घुमाने के लिए ड्रैग करें • ज़ूम करने के लिए स्क्रॉल करें • अंग पर क्लिक करें',
+    regionIdentifier: 'शरीर क्षेत्र पहचान',
+    commonSymptomsTitle: 'इस अंग से जुड़े प्रमुख लक्षण',
+    suggestedQuestionsTitle: 'डॉक्टर से पूछने योग्य प्रश्न',
+    findNearbySpecialist: 'नक्शे पर नजदीकी विशेषज्ञ खोजें',
+    addQuestionsToPrepKit: 'डॉक्टर विज़िट किट में प्रश्न जोड़ें',
+    illustrativeDisclaimer: 'केवल शैक्षिक मार्गदर्शन के लिए। यह चिकित्सीय निदान नहीं है।',
+
+    specialistLocatorTitle: 'विशेषज्ञ खोज व',
+    specialistLocatorHighlight: 'इंटरैक्टिव नक्शा',
+    specialistLocatorSubtitle: 'नक्शे पर लाल पिन चिह्नों द्वारा मान्यता प्राप्त विशेषज्ञ और क्लीनिक। निर्णय पूरी तरह आपके हाथ में है।',
+    searchDoctorPlaceholder: 'डॉक्टर, अस्पताल या विशेषज्ञता खोजें...',
+    maxRadius: 'दूरी सीमा',
+    teleconsultation: 'वीडियो परामर्श',
+    bookSlot: 'अपॉइंटमेंट लें',
+    consultationFee: 'परामर्श शुल्क',
+    nextAvailable: 'उपलब्ध समय',
+    mapPinTitle: 'क्लीनिकल लोकेशन नक्शा',
+    mapPinSubtitle: 'लाल चिह्न नजदीकी सत्यापित डॉक्टरों को दर्शाते हैं',
+
+    intakeTitle: 'रिपोर्ट्स व',
+    intakeHighlight: 'दस्तावेज़ स्कैन',
+    intakeSubtitle: '50MB तक की फोन फोटो या पीडीएफ अपलोड करें। स्वतः सीधी होती है और मेडिकल पैरामीटर निकाले जाते हैं।',
+    quickTestPresets: 'त्वरित डेमो परीक्षण (बिना फ़ाइल अपलोड किए):',
+    dragDropTitle: 'यहाँ अपनी रिपोर्ट या फोटो खींचकर छोड़ें',
+    dragDropSubtitle: 'लैब पीडीएफ, डिजिटल पर्ची या फोन कैमरा फोटो समर्थित हैं।',
+    runningOcr: 'OCR और स्वास्थ्य पैरामीटर निकाले जा रहे हैं...',
+    saveToPatientRecord: 'मरीज़ रिकॉर्ड और टाइमलाइन में सहेजें',
+
+    timelineTitle: 'एकीकृत जीवन',
+    timelineHighlight: 'टाइमलाइन',
+    timelineSubtitle: 'हर रिपोर्ट, घरेलू वाइटल्स और लक्षण डायरी एक ही व्यवस्थित क्रम में।',
+    allEvents: 'सभी घटनाएँ',
+    labReports: 'लैब रिपोर्ट्स',
+    homeVitals: 'घरेलू वाइटल्स',
+    symptomJournal: 'लक्षण डायरी',
+
+    vitalsTitle: 'घरेलू स्वास्थ्य',
+    vitalsHighlight: 'मापक',
+    vitalsSubtitle: 'डॉक्टर विज़िट के बीच के माप दर्ज करें। बड़े टच बटन और मॉनिटर स्क्रीन फोटो OCR।',
+    photoOcrBannerTitle: 'BP मॉनिटर या ग्लूकोमीटर स्क्रीन से फोटो OCR',
+    photoOcrBannerDesc: 'स्क्रीन की फोटो खींचकर स्वतः संख्या भरें।',
+    simulatePhotoCapture: 'फोटो स्कैन परीक्षण',
+    logMeasurement: 'रीडिंग दर्ज करें',
+
+    journalTitle: 'दैनिक लक्षण व',
+    journalHighlight: 'डायरी',
+    journalSubtitle: '0-10 स्लाइडर से अपनी स्थिति दर्ज करें और दवा लेने की जानकारी सुरक्षित रखें।',
+    severitySliderTitle: 'लक्षण की तीव्रता (0-10)',
+    medAdherenceTitle: 'आज दवा ली या नहीं',
+    contextTagsTitle: 'दैनिक परिस्थितियाँ (चुनें)',
+    saveJournalEntry: 'डायरी सहेजें',
+
+    trendsTitle: 'स्वास्थ्य रुझान व',
+    trendsHighlight: 'विश्लेषण',
+    trendsSubtitle: 'ब्लड प्रेशर, शुगर और कोलेस्ट्रॉल में महीनों के बदलाव का सटीक विश्लेषण।',
+    trendDetection: 'रुझान पहचान [#20]',
+    anomalyDetection: 'असामान्य बदलाव पहचान [#22]',
+    doctorVisitReadout: 'डॉक्टर रिपोर्ट सारांश',
+
+    prepKitTitle: 'डॉक्टर विज़िट',
+    prepKitHighlight: 'तैयारी किट',
+    prepKitSubtitle: '3 मिनट में तैयार करें अपनी प्रश्नों की सूची जो डॉक्टर से पूछनी है।',
+    step1Title: 'लक्षण व अंग',
+    step2Title: 'अवधि व बदलाव',
+    step3Title: 'दवाएं व आदतें',
+    step4Title: 'तैयार प्रश्न सूची',
+    synthesizeQuestionList: 'प्रश्न सूची तैयार करें',
+    printChecklist: 'सूची प्रिंट करें',
+
+    chatbotTitle: 'मेडिकल चैटबॉट —',
+    chatbotHighlight: 'मरीज़ सहायक',
+    chatbotSubtitle: 'आपकी रिपोर्ट्स पर आधारित सरल भाषा में मार्गदर्शन। रोग निदान नहीं करता।',
+    chatPlaceholder: 'अपनी रिपोर्ट्स या स्वास्थ्य के बारे में कुछ भी पूछें...',
+    send: 'भेजें',
+    safetyNotice: 'केवल आपकी रिपोर्ट्स पर आधारित। डॉक्टर का विकल्प नहीं।',
+
+    packetTitle: 'डॉक्टर विज़िट',
+    packetHighlight: 'पैकेट (PDF)',
+    printSavePdf: 'प्रिंट करें / PDF सहेजें',
+    physician60SecNotice: 'डॉक्टर के 60 सेकंड अवलोकन हेतु',
+  },
+  bn: {
+    appName: 'হেলথএআই সামারাইজার',
+    tagline: 'রোগীর স্বাস্থ্য সঙ্গী ও আবিষ্কার কেন্দ্র',
+    dashboard: 'ড্যাশবোর্ড',
+    anatomy3D: '3D শরীর',
+    documents: 'রিপোর্ট OCR',
+    vitals: 'হোম ভাইটালস',
+    journal: 'ডায়েরি',
+    trends: 'ট্রেন্ডস',
+    specialists: 'বিশেষজ্ঞ ও ম্যাপ',
+    prepKit: 'ডাক্তার প্রস্তুতি',
+    packetExport: 'ডাক্তার প্যাকেট',
+    aiChatbot: 'AI সহকারী',
+
+    heroSubtitle: 'রোগীর স্বাস্থ্য সঙ্গী // 3D অ্যানাটমি ইঞ্জিন',
+    heroTitleStart: 'আপনার সম্পূর্ণ স্বাস্থ্যযাত্রা,',
+    heroTitleHighlight: 'সহজ ও স্পষ্ট বাংলায়।',
+    heroDescription: 'কোনো জটিল ডাক্তারি পরিভাষা নয়। 3D মডেলে নিজের শরীর বুঝুন, রিপোর্ট স্ক্যান করুন এবং ডাক্তারের সাথে কথা বলতে প্রস্তুত হোন।',
+    heroLaunch3D: '3D অ্যানাটমি শুরু করুন',
+    heroUploadReport: 'রিপোর্ট আপলোড করুন',
+    heroGroundedAI: 'AI স্বাস্থ্য সহকারী',
+
+    myHealthDashboard: 'আমার স্বাস্থ্য',
+    patientCommandCenter: 'রোগীর ড্যাশবোর্ড',
+    bloodPressure: 'রক্তচাপ (BP)',
+    fastingSugar: 'ফাস্টিং সুগার',
+    ldlCholesterol: 'কোলেস্টেরল (LDL)',
+    kidneyFiltration: 'কিডনি কার্যক্ষমতা',
+    optimalBand: 'অনুকূল',
+    preDiabetic: 'প্রাক-ডায়াবেটিক',
+    improving: 'উন্নতিশীল',
+    healthy: 'সুস্থ',
+    aiSummaryBannerTitle: 'সহজ বাংলায় AI সারাংশ // আগস্ট - সেপ্টেম্বর ২০২৬',
+    aiSummaryBannerText: '"আপনার সামগ্রিক স্বাস্থ্য পরিস্থিতি স্থিতিশীল রয়েছে। সকালের ওষুধে রক্তচাপ নিয়ন্ত্রণে এবং তিন মাসের সুগার গড় নিয়ন্ত্রণে রয়েছে।"',
+    recentReportsTitle: 'সাম্প্রতিক রিপোর্ট ও স্ক্যান',
+    uploadNewReport: 'নতুন রিপোর্ট যোগ করুন',
+    parametersExtracted: 'প্যারামিটার সংগৃহীত',
+
+    anatomyExplorerTitle: '3D ইন্টারঅ্যাক্টিভ',
+    anatomyExplorerHighlight: 'অ্যানাটমি এক্সপ্লোরার',
+    anatomyExplorerSubtitle: 'উচ্চমানের 3D মডেলে শরীরের অঙ্গগুলি ঘুরে দেখুন এবং বিশেষজ্ঞ খুঁজুন।',
+    searchSymptomPlaceholder: 'উপসর্গ লিখুন (যেমন হাঁটু ব্যথা, বুকে চাপ, মাথাব্যথা)...',
+    maleModel: 'পুরুষ শরীর',
+    femaleModel: 'মহিলা শরীর',
+    rotateTip: 'ঘোরাতে ড্র্যাগ করুন • জুম করতে স্ক্রোল করুন',
+    regionIdentifier: 'অঙ্গ শনাক্তকরণ',
+    commonSymptomsTitle: 'এই অংশের সাধারণ লক্ষণ',
+    suggestedQuestionsTitle: 'ডাক্তারকে জিজ্ঞাসা করার প্রশ্ন',
+    findNearbySpecialist: 'ম্যাপে নিকটস্থ বিশেষজ্ঞ খুঁজুন',
+    addQuestionsToPrepKit: 'ভিজিট কিটে প্রশ্ন যোগ করুন',
+    illustrativeDisclaimer: 'শুধুমাত্র শিক্ষামূলক উদ্দেশ্যের জন্য।',
+
+    specialistLocatorTitle: 'বিশেষজ্ঞ সন্ধান ও',
+    specialistLocatorHighlight: 'ইন্টারঅ্যাক্টিভ ম্যাপ',
+    specialistLocatorSubtitle: 'ইন্টারঅ্যাক্টিভ ম্যাপে লাল পিনের মাধ্যমে নিকটবর্তী ডাক্তারদের তালিকা।',
+    searchDoctorPlaceholder: 'ডাক্তার, হাসপাতাল খুঁজুন...',
+    maxRadius: 'দূরত্ব সীমা',
+    teleconsultation: 'ভিডিও পরামর্শ',
+    bookSlot: 'স্লট বুক করুন',
+    consultationFee: 'পরামর্শ ফি',
+    nextAvailable: 'উপলব্ধ সময়',
+    mapPinTitle: 'ক্লিনিক্যাল লোকেশন ম্যাপ',
+    mapPinSubtitle: 'লাল পিনগুলি নিকটস্থ সার্টিফাইড ডাক্তার নির্দেশ করে',
+
+    intakeTitle: 'রিপোর্ট ও',
+    intakeHighlight: 'ডকুমেন্ট স্ক্যান',
+    intakeSubtitle: 'ফোন ফটো বা ল্যাব পিডিএফ আপলোড করুন। সহজে স্বাস্থ্য তথ্য নিষ্কাশন হয়।',
+    quickTestPresets: 'দ্রুত ডেমো পরীক্ষা:',
+    dragDropTitle: 'আপনার রিপোর্ট এখানে ছাড়ুন',
+    dragDropSubtitle: 'পিডিএফ ও ছবি উভয়ই গ্রহণযোগ্য।',
+    runningOcr: 'OCR প্রক্রিয়াকরণ চলছে...',
+    saveToPatientRecord: 'রেকর্ডে সংরক্ষণ করুন',
+
+    timelineTitle: 'একীভূত জীবন',
+    timelineHighlight: 'টাইমলাইন',
+    timelineSubtitle: 'প্রতিটি রিপোর্ট ও হোম ভাইটাল এক সুতায় গাঁথা।',
+    allEvents: 'সব ঘটনা',
+    labReports: 'ল্যাব রিপোর্ট',
+    homeVitals: 'হোম ভাইটালস',
+    symptomJournal: 'উপসর্গ ডায়েরি',
+
+    vitalsTitle: 'হোম ভাইটালস',
+    vitalsHighlight: 'ট্র্যাকার',
+    vitalsSubtitle: 'বাড়িতে মাপা রক্তচাপ ও সুগার সহজে লিখে রাখুন।',
+    photoOcrBannerTitle: 'বিপি মনিটর স্ক্রিন থেকে ফটো OCR',
+    photoOcrBannerDesc: 'স্ক্রিনের ছবি তুলে স্বয়ংক্রিয় তথ্য সংগ্রহ করুন।',
+    simulatePhotoCapture: 'ফটো স্ক্যান ডেমো',
+    logMeasurement: 'রিডিং সেভ করুন',
+
+    journalTitle: 'উপসর্গ ও সুস্থতা',
+    journalHighlight: 'ডায়েরি',
+    journalSubtitle: '০-১০ স্কেলে কষ্ট ট্র্যাক করুন।',
+    severitySliderTitle: 'উপসর্গের তীব্রতা (০-১০)',
+    medAdherenceTitle: 'আজ ওষুধ গ্রহণ',
+    contextTagsTitle: 'দৈনন্দিন প্রসঙ্গ',
+    saveJournalEntry: 'ডায়েরি সেভ করুন',
+
+    trendsTitle: 'স্বাস্থ্য ট্রেন্ডস ও',
+    trendsHighlight: 'অ্যানালিটিক্স',
+    trendsSubtitle: 'রক্তচাপ ও সুগারের মাসভিত্তিক বিশ্লেষণ।',
+    trendDetection: 'ট্রেন্ড শনাক্তকরণ [#২০]',
+    anomalyDetection: 'অস্বাভাবিক পরিবর্তন [#২২]',
+    doctorVisitReadout: 'ডাক্তার সামারি',
+
+    prepKitTitle: 'ডাক্তার ভিজিট',
+    prepKitHighlight: 'প্রস্তুতি কিট',
+    prepKitSubtitle: 'ডাক্তারের সাথে আলোচনার জন্য গুরুত্বপূর্ণ প্রশ্নের তালিকা।',
+    step1Title: 'লক্ষণ ও অঙ্গ',
+    step2Title: 'সময়কাল',
+    step3Title: 'ওষুধের বিবরণ',
+    step4Title: 'প্রশ্ন তালিকা',
+    synthesizeQuestionList: 'প্রশ্ন প্রস্তুত করুন',
+    printChecklist: 'প্রিন্ট করুন',
+
+    chatbotTitle: 'মেডিকেল চ্যাটবট —',
+    chatbotHighlight: 'রোগী সহকারী',
+    chatbotSubtitle: 'আপনার রিপোর্টের উপর ভিত্তি করে সহজ ব্যাখ্যা।',
+    chatPlaceholder: 'আপনার রিপোর্ট সম্পর্কে কিছু জিজ্ঞাসা করুন...',
+    send: 'পাঠান',
+    safetyNotice: 'রোগ নির্ণয় করে না। ডাক্তারের বিকল্প নয়।',
+
+    packetTitle: 'ডাক্তার ভিজিট',
+    packetHighlight: 'প্যাকেট (PDF)',
+    printSavePdf: 'প্রিন্ট / PDF সেভ',
+    physician60SecNotice: 'ডাক্তারের ৬০ সেকেন্ড পর্যালোচনার জন্য',
+  },
+  ta: {
+    appName: 'ஹெல்த்ஏஐ சுருக்கம்',
+    tagline: 'நோயாளி ஆரோக்கிய வழிகாட்டி',
+    dashboard: 'டாஷ்போர்டு',
+    anatomy3D: '3D உடல் மாதிரி',
+    documents: 'அறிக்கைகள் OCR',
+    vitals: 'வீட்டு அளவீடுகள்',
+    journal: 'குறிப்பு',
+    trends: 'போக்குகள்',
+    specialists: 'நிபுணர்கள் வரைபடம்',
+    prepKit: 'சந்திப்பு தயார்',
+    packetExport: 'மருத்துவர் அறிக்கை',
+    aiChatbot: 'AI உதவியாளர்',
+
+    heroSubtitle: 'நோயாளி ஆரோக்கிய வழிகாட்டி // 3D மாதிரி',
+    heroTitleStart: 'உங்கள் முழு ஆரோக்கியக் கதை,',
+    heroTitleHighlight: 'எளிய தமிழில் விவரிக்கப்பட்டது.',
+    heroDescription: 'கடினமான மருத்துவச் சொற்கள் இல்லை. உங்கள் உடலை 3D இல் ஆராயுங்கள், அறிக்கைகளை ஸ்கேன் செய்யுங்கள், மருத்துவரை நம்பிக்கையுடன் சந்தியுங்கள்.',
+    heroLaunch3D: '3D உடலைத் தொடங்குங்கள்',
+    heroUploadReport: 'அறிக்கையை பதிவேற்றவும்',
+    heroGroundedAI: 'AI உதவியாளர்',
+
+    myHealthDashboard: 'என் ஆரோக்கியம்',
+    patientCommandCenter: 'கட்டுப்பாட்டு மையம்',
+    bloodPressure: 'இரத்த அழுத்தம் (BP)',
+    fastingSugar: 'சர்க்கரை அளவு',
+    ldlCholesterol: 'கொழுப்பு (LDL)',
+    kidneyFiltration: 'சிறுநீரக செயல்பாடு',
+    optimalBand: 'சரியானது',
+    preDiabetic: 'முன் நீரிழிவு',
+    improving: 'முன்னேற்றம்',
+    healthy: 'ஆரோக்கியமானது',
+    aiSummaryBannerTitle: 'எளிய தமிழ் AI சுருக்கம் // ஆகஸ்ட் - செப்டம்பர் 2026',
+    aiSummaryBannerText: '"உங்கள் ஆரோக்கியம் சீராக உள்ளது. காலை மருந்துகளால் இரத்த அழுத்தம் கட்டுக்குள் உள்ளது."',
+    recentReportsTitle: 'சமீபத்திய அறிக்கைகள்',
+    uploadNewReport: 'புதிய அறிக்கை சேர்க்க',
+    parametersExtracted: 'அளவீடுகள் எடுக்கப்பட்டன',
+
+    anatomyExplorerTitle: '3D மாதிரி',
+    anatomyExplorerHighlight: 'உடல் ஆய்வாளர்',
+    anatomyExplorerSubtitle: 'உறுப்புகளை 3D இல் பாருங்கள் மற்றும் நிபுணர்களை கண்டறியுங்கள்.',
+    searchSymptomPlaceholder: 'அறிகுறி தேடுங்கள் (முழங்கால் வலி, மார்பு அழுத்தம்)...',
+    maleModel: 'ஆண் மாதிரி',
+    femaleModel: 'பெண் மாதிரி',
+    rotateTip: 'சுழற்ற இழுக்கவும் • பெரிதாக்க உருட்டவும்',
+    regionIdentifier: 'உறுப்பு அடையாளம்',
+    commonSymptomsTitle: 'பொதுவான அறிகுறிகள்',
+    suggestedQuestionsTitle: 'மருத்துவரிடம் கேட்க வேண்டியவை',
+    findNearbySpecialist: 'வரைபடத்தில் நிபுணர் தேடுங்கள்',
+    addQuestionsToPrepKit: 'கேள்விகளை சேர்க்கவும்',
+    illustrativeDisclaimer: 'தகவல் நோக்கங்களுக்காக மட்டுமே.',
+
+    specialistLocatorTitle: 'நிபுணர் தேடல் &',
+    specialistLocatorHighlight: 'ஊடாடும் வரைபடம்',
+    specialistLocatorSubtitle: 'சிவப்பு வரைபடக் குறிகளுடன் மருத்துவர் கிளினிக்குகள்.',
+    searchDoctorPlaceholder: 'மருத்துவர், மருத்துவமனை தேட...',
+    maxRadius: 'தூரம்',
+    teleconsultation: 'வீடியோ அழைப்பு',
+    bookSlot: 'நேரம் பதிவு செய்',
+    consultationFee: 'கட்டணம்',
+    nextAvailable: 'அடுத்த நேரம்',
+    mapPinTitle: 'மருத்துவ வரைபடம்',
+    mapPinSubtitle: 'சிவப்பு புள்ளிகள் அருகிலுள்ள மருத்துவர்களை காட்டுகின்றன',
+
+    intakeTitle: 'அறிக்கை மற்றும்',
+    intakeHighlight: 'ஆவண ஸ்கேன்',
+    intakeSubtitle: 'ஆய்வக அறிக்கைகள் மற்றும் புகைப்படங்களை எளிதாக ஸ்கேன் செய்யுங்கள்.',
+    quickTestPresets: 'மாதிரி சோதனைகள்:',
+    dragDropTitle: 'அறிக்கையை இங்கே இழுத்து விடவும்',
+    dragDropSubtitle: 'PDF அல்லது புகைப்படங்களை பதிவேற்றலாம்.',
+    runningOcr: 'OCR ஸ்கேன் செய்யப்படுகிறது...',
+    saveToPatientRecord: 'பதிவேட்டில் சேமிக்கவும்',
+
+    timelineTitle: 'ஒருங்கிணைந்த வாழ்க்கை',
+    timelineHighlight: 'காலவரிசை',
+    timelineSubtitle: 'உங்கள் அனைத்து அறிக்கைகளும் ஒரே வரிசையில்.',
+    allEvents: 'அனைத்து நிகழ்வுகள்',
+    labReports: 'ஆய்வக அறிக்கைகள்',
+    homeVitals: 'வீட்டு அளவீடுகள்',
+    symptomJournal: 'அறிகுறி குறிப்பு',
+
+    vitalsTitle: 'வீட்டு அளவீடுகள்',
+    vitalsHighlight: 'டிராக்கர்',
+    vitalsSubtitle: 'வீட்டில் அளவிடப்பட்ட இரத்த அழுத்தம் மற்றும் சர்க்கரை அளவை பதிவு செய்யுங்கள்.',
+    photoOcrBannerTitle: 'மானிட்டர் திரையிலிருந்து புகைப்பட OCR',
+    photoOcrBannerDesc: 'திரையை புகைப்படம் எடுத்து தானாக எண்களை பதிவு செய்யுங்கள்.',
+    simulatePhotoCapture: 'புகைப்பட மாதிரி',
+    logMeasurement: 'பதிவு செய்',
+
+    journalTitle: 'அறிகுறி & ஆரோக்கிய',
+    journalHighlight: 'குறிப்பு',
+    journalSubtitle: '0-10 அளவில் உங்கள் நிலையை பதிவு செய்யுங்கள்.',
+    severitySliderTitle: 'அறிகுறியின் தீவிரம் (0-10)',
+    medAdherenceTitle: 'இன்று மருந்து உட்கொள்ளல்',
+    contextTagsTitle: 'சூழ்நிலை குறிப்புகள்',
+    saveJournalEntry: 'சேமிக்கவும்',
+
+    trendsTitle: 'போக்குகள் மற்றும்',
+    trendsHighlight: 'பகுப்பாய்வு',
+    trendsSubtitle: 'இரத்த அழுத்தம் மற்றும் சர்க்கரை அளவின் தொடர் போக்குகள்.',
+    trendDetection: 'போக்கு கண்டறிதல்',
+    anomalyDetection: 'திடீர் மாற்றங்கள்',
+    doctorVisitReadout: 'மருத்துவர் பார்வை',
+
+    prepKitTitle: 'மருத்துவர் சந்திப்பு',
+    prepKitHighlight: 'தயாரிப்பு கிட்',
+    prepKitSubtitle: 'மருத்துவரிடம் கேட்க வேண்டிய கேள்விகளை தயார் செய்யுங்கள்.',
+    step1Title: 'அறிகுறிகள்',
+    step2Title: 'கால அளவு',
+    step3Title: 'மருந்துகள்',
+    step4Title: 'கேள்வி பட்டியல்',
+    synthesizeQuestionList: 'கேள்விகளை உருவாக்கு',
+    printChecklist: 'அச்சிடுங்கள்',
+
+    chatbotTitle: 'மருத்துவ சாட்போட் —',
+    chatbotHighlight: 'நோயாளி உதவியாளர்',
+    chatbotSubtitle: 'உங்கள் அறிக்கைகளின் அடிப்படையில் எளிமையான பதில்.',
+    chatPlaceholder: 'உங்கள் உடல்நிலை பற்றி கேளுங்கள்...',
+    send: 'அனுப்பு',
+    safetyNotice: 'மருத்துவ ஆலோசனைக்கு மாற்றாகாது.',
+
+    packetTitle: 'மருத்துவர் அறிக்கை',
+    packetHighlight: 'தொகுப்பு (PDF)',
+    printSavePdf: 'அச்சிடு / PDF சேமி',
+    physician60SecNotice: 'மருத்துவர் 60 வினாடி பார்வைக்கு',
+  },
+  te: {
+    appName: 'హెల్త్‌ఏఐ సమ్మరైజర్',
+    tagline: 'రోగి ఆరోగ్య సహచరి',
+    dashboard: 'డ్యాష్‌బోర్డ్',
+    anatomy3D: '3D శరీర నమూనా',
+    documents: 'నివేదికలు OCR',
+    vitals: 'ఇంటి వైటల్స్',
+    journal: 'డైరీ',
+    trends: 'ట్రెండ్స్',
+    specialists: 'స్పెషలిస్ట్‌లు & మ్యాప్',
+    prepKit: 'విజిట్ ప్రిపరేషన్',
+    packetExport: 'డాక్టర్ ప్యాకెట్',
+    aiChatbot: 'AI అసిస్టెంట్',
+
+    heroSubtitle: 'రోగి ఆరోగ్య సహచరి // 3D మోడల్ ఇంజిన్',
+    heroTitleStart: 'మీ పూర్తి ఆరోగ్య ప్రయాణం,',
+    heroTitleHighlight: 'సులభమైన తెలుగులో.',
+    heroDescription: 'ఎటువంటి కఠినమైన వైద్య పదాలు లేకుండా మీ శరీరాన్ని 3Dలో అన్వేషించండి, ల్యాబ్ రిపోర్టులను స్కాన్ చేయండి మరియు వైద్యుడిని ధైర్యంగా కలవండి.',
+    heroLaunch3D: '3D మోడల్ ప్రారంభించండి',
+    heroUploadReport: 'రిపోర్ట్ అప్‌లోడ్ చేయండి',
+    heroGroundedAI: 'AI అసిస్టెంట్',
+
+    myHealthDashboard: 'నా ఆరోగ్యం',
+    patientCommandCenter: 'కంట్రోల్ సెంటర్',
+    bloodPressure: 'రక్తపోటు (BP)',
+    fastingSugar: 'షుగర్ లెవల్',
+    ldlCholesterol: 'కొలెస్ట్రాల్ (LDL)',
+    kidneyFiltration: 'కిడ్నీ పనితీరు',
+    optimalBand: 'అనుకూలం',
+    preDiabetic: 'ప్రీ-డయాబెటిక్',
+    improving: 'మెరుగుపడుతోంది',
+    healthy: 'ఆరోగ్యకరం',
+    aiSummaryBannerTitle: 'సులభమైన AI సారాంశం // ఆగస్టు - సెప్టెంబర్ 2026',
+    aiSummaryBannerText: '"మీ ఆరోగ్యం స్థిరంగా ఉంది. ఉదయం మందులతో బీపీ అదుపులో ఉంది మరియు మూడు నెలల చక్కెర సగటు అదుపులో ఉంది."',
+    recentReportsTitle: 'ఇటీవలి నివేదికలు',
+    uploadNewReport: 'కొత్త రిపోర్ట్ జోడించండి',
+    parametersExtracted: 'వివరాలు సేకరించబడ్డాయి',
+
+    anatomyExplorerTitle: '3D ఇంటరాక్టివ్',
+    anatomyExplorerHighlight: 'శరీర అన్వేషణ',
+    anatomyExplorerSubtitle: 'అవయవాలను 3Dలో చూడండి మరియు నిపుణులను కనుగొనండి.',
+    searchSymptomPlaceholder: 'లక్షణం శోధించండి (మోకాలి నొప్పి, ఛాతీలో భారం)...',
+    maleModel: 'పురుష నమూనా',
+    femaleModel: 'స్త్రీ నమూనా',
+    rotateTip: 'తిప్పడానికి లాగండి • జూమ్ చేయడానికి స్క్రోల్ చేయండి',
+    regionIdentifier: 'అవయవ గుర్తింపు',
+    commonSymptomsTitle: 'ఈ భాగం లక్షణాలు',
+    suggestedQuestionsTitle: 'డాక్టర్‌ను అడగవలసిన ప్రశ్నలు',
+    findNearbySpecialist: 'మ్యాప్‌లో స్పెషలిస్ట్‌ను కనుగొనండి',
+    addQuestionsToPrepKit: 'ప్రశ్నలను ప్రిపరేషన్ కిట్‌కు చేర్చండి',
+    illustrativeDisclaimer: 'సమాచార ప్రయోజనాల కోసం మాత్రమే.',
+
+    specialistLocatorTitle: 'స్పెషలిస్ట్ శోధన &',
+    specialistLocatorHighlight: 'ఇంటరాక్టివ్ మ్యాప్',
+    specialistLocatorSubtitle: 'ఎరుపు రంగు పిన్ మార్కర్లతో సమీపంలోని వైద్యుల క్లినిక్‌ల వివరాలు.',
+    searchDoctorPlaceholder: 'వైద్యుడు, ఆసుపత్రి పేరు...',
+    maxRadius: 'దూర పరిమితి',
+    teleconsultation: 'వీడియో సంప్రదింపు',
+    bookSlot: 'స్లాట్ బుక్ చేయండి',
+    consultationFee: 'ఫీజు',
+    nextAvailable: 'అందుబాటు సమయం',
+    mapPinTitle: 'క్లినికల్ లొకేషన్ మ్యాప్',
+    mapPinSubtitle: 'ఎరుపు పిన్స్ సమీపంలోని గుర్తింపు పొందిన వైద్యులను సూచిస్తాయి',
+
+    intakeTitle: 'రిపోర్టులు &',
+    intakeHighlight: 'పత్రాల స్కాన్',
+    intakeSubtitle: 'ఫోన్ ఫోటోలు లేదా ల్యాబ్ పీడీఎఫ్‌లను సులభంగా స్కాన్ చేయండి.',
+    quickTestPresets: 'డెమో టెస్టులు:',
+    dragDropTitle: 'రిపోర్ట్ ఇక్కడ డ్రాప్ చేయండి',
+    dragDropSubtitle: 'PDF లేదా ఫోటోలను అప్‌లోడ్ చేయండి.',
+    runningOcr: 'OCR ప్రాసెసింగ్ జరుగుతోంది...',
+    saveToPatientRecord: 'రికార్డులో భద్రపరచండి',
+
+    timelineTitle: 'ఏకీకృత జీవన',
+    timelineHighlight: 'కాలక్రమం',
+    timelineSubtitle: 'ప్రతి రిపోర్ట్ ఒకే క్రమంలో.',
+    allEvents: 'అన్ని ఈవెంట్‌లు',
+    labReports: 'ల్యాబ్ రిపోర్టులు',
+    homeVitals: 'ఇంటి వైటల్స్',
+    symptomJournal: 'లక్షణాల డైరీ',
+
+    vitalsTitle: 'ఇంటి వైటల్స్',
+    vitalsHighlight: 'ట్రాకర్',
+    vitalsSubtitle: 'ఇంట్లో కొలిచిన రక్తపోటు మరియు షుగర్‌ను నమోదు చేయండి.',
+    photoOcrBannerTitle: 'స్క్రీన్ నుండి ఫోటో OCR',
+    photoOcrBannerDesc: 'స్క్రీన్‌ను ఫోటో తీసి ఆటోమేటిక్‌గా రీడింగ్ తీసుకోండి.',
+    simulatePhotoCapture: 'ఫోటో స్కాన్ డెమో',
+    logMeasurement: 'రీడింగ్ సేవ్ చేయండి',
+
+    journalTitle: 'లక్షణాలు & వెల్నెస్',
+    journalHighlight: 'డైరీ',
+    journalSubtitle: '0-10 స్కేలులో మీ పరిస్థితిని నమోదు చేయండి.',
+    severitySliderTitle: 'లక్షణం తీవ్రత (0-10)',
+    medAdherenceTitle: 'ఈరోజు మందులు వేసుకున్నారా',
+    contextTagsTitle: 'సందర్భ ట్యాగ్‌లు',
+    saveJournalEntry: 'సేవ్ చేయండి',
+
+    trendsTitle: 'ట్రెండ్స్ &',
+    trendsHighlight: 'విశ్లేషణ',
+    trendsSubtitle: 'రక్తపోటు మరియు చక్కెర స్థాయిల కాలానుగుణ విశ్లేషణ.',
+    trendDetection: 'ట్రెండ్ గుర్తింపు',
+    anomalyDetection: 'ఆకస్మిక మార్పులు',
+    doctorVisitReadout: 'డాక్టర్ సారాంశం',
+
+    prepKitTitle: 'డాక్టర్ విజిట్',
+    prepKitHighlight: 'ప్రిపరేషన్ కిట్',
+    prepKitSubtitle: 'డాక్టర్‌ను అడగవలసిన ప్రశ్నలను సిద్ధం చేయండి.',
+    step1Title: 'లక్షణాలు',
+    step2Title: 'కాలం',
+    step3Title: 'మందులు',
+    step4Title: 'ప్రశ్నల జాబితా',
+    synthesizeQuestionList: 'ప్రశ్నలను తయారు చేయండి',
+    printChecklist: 'ప్రింట్ చేయండి',
+
+    chatbotTitle: 'మెడికల్ చాట్‌బాట్ —',
+    chatbotHighlight: 'రోగి అసిస్టెంట్',
+    chatbotSubtitle: 'మీ రిపోర్టుల ఆధారంగా సరళమైన సమాధానాలు.',
+    chatPlaceholder: 'మీ ఆరోగ్యం గురించి అడగండి...',
+    send: 'పంపండి',
+    safetyNotice: 'చికిత్స సూచించదు. డాక్టర్‌కు ప్రత్యామ్నాయం కాదు.',
+
+    packetTitle: 'డాక్టర్ విజిట్',
+    packetHighlight: 'ప్యాకెట్ (PDF)',
+    printSavePdf: 'ప్రింట్ / PDF సేవ్',
+    physician60SecNotice: 'వైద్యుడి 60 సెకన్ల సమీక్ష కోసం',
+  },
+  mr: {
+    appName: 'हेल्थएआय सारांश',
+    tagline: 'रुग्ण आरोग्य साथी',
+    dashboard: 'डॅशबोर्ड',
+    anatomy3D: '3D शरीर',
+    documents: 'तपासणी OCR',
+    vitals: 'घरगुती व्हायटल्स',
+    journal: 'डायरी',
+    trends: 'कल व कल',
+    specialists: 'तज्ज्ञ व नकाशा',
+    prepKit: 'भेट तयारी',
+    packetExport: 'डॉक्टर पॅकेट',
+    aiChatbot: 'AI मदतनीस',
+
+    heroSubtitle: 'रुग्ण आरोग्य साथी // 3D शरीर मॉडेल',
+    heroTitleStart: 'तुमचा संपूर्ण आरोग्य प्रवास,',
+    heroTitleHighlight: 'सोप्या आणि स्पष्ट भाषेत.',
+    heroDescription: 'कोणतीही अवघड वैद्यकीय भाषा नाही. तुमचे शरीर 3D मध्ये समजून घ्या, लॅब रिपोर्ट्स स्कॅन करा आणि डॉक्टरांना आत्मविश्वासाने भेटा.',
+    heroLaunch3D: '3D मॉडेल सुरू करा',
+    heroUploadReport: 'रिपोर्ट अपलोड करा',
+    heroGroundedAI: 'AI आरोग्य मदतनीस',
+
+    myHealthDashboard: 'माझे आरोग्य',
+    patientCommandCenter: 'कंट्रोल सेंटर',
+    bloodPressure: 'रक्तदाब (BP)',
+    fastingSugar: 'फास्टिंग साखर',
+    ldlCholesterol: 'कोलेस्टेरॉल (LDL)',
+    kidneyFiltration: 'किडनी कार्यक्षमता',
+    optimalBand: 'उत्कृष्ट',
+    preDiabetic: 'प्री-डायबेटिक',
+    improving: 'सुधारत आहे',
+    healthy: 'निरोगी',
+    aiSummaryBannerTitle: 'सोप्या भाषेत AI सारांश // ऑगस्ट - सप्टेंबर २०२६',
+    aiSummaryBannerText: '"तुमचे एकंदर आरोग्य स्थिर आहे. सकाळच्या गोळ्यांनी रक्तदाब नियंत्रणात आहे."',
+    recentReportsTitle: 'अलीकडील रिपोर्ट्स',
+    uploadNewReport: 'नवीन रिपोर्ट जोडा',
+    parametersExtracted: 'पॅरामीटर्स काढले',
+
+    anatomyExplorerTitle: '3D इंटरअॅक्टिव्ह',
+    anatomyExplorerHighlight: 'शरीर मॉडेल',
+    anatomyExplorerSubtitle: 'अंग 3D मध्ये एक्सप्लोर करा आणि तज्ज्ञ डॉक्टर शोधा.',
+    searchSymptomPlaceholder: 'लक्षण शोधा (गुडघेदुखी, छातीत जडपणा)...',
+    maleModel: 'पुरुष मॉडेल',
+    femaleModel: 'स्त्री मॉडेल',
+    rotateTip: 'फिरवण्यासाठी ड्रॅग करा',
+    regionIdentifier: 'अवयव ओळख',
+    commonSymptomsTitle: 'या भागाची सामान्य लक्षणे',
+    suggestedQuestionsTitle: 'डॉक्टरांना विचारायचे प्रश्न',
+    findNearbySpecialist: 'नकाशावर तज्ज्ञ शोधा',
+    addQuestionsToPrepKit: 'किटमध्ये प्रश्न जोडा',
+    illustrativeDisclaimer: 'फक्त माहितीसाठी.',
+
+    specialistLocatorTitle: 'तज्ज्ञ शोध व',
+    specialistLocatorHighlight: 'नकाशा',
+    specialistLocatorSubtitle: 'लाल पिनद्वारे नकाशावर दर्शविलेले अधिकृत डॉक्टर व दवाखाने.',
+    searchDoctorPlaceholder: 'डॉक्टर, रुग्णालय शोधा...',
+    maxRadius: 'अंतर',
+    teleconsultation: 'व्हिडिओ सल्ला',
+    bookSlot: 'वेळ बुक करा',
+    consultationFee: 'सल्ला फी',
+    nextAvailable: 'उपलब्ध वेळ',
+    mapPinTitle: 'क्लिनिकल नकाशा',
+    mapPinSubtitle: 'लाल मार्कर जवळचे डॉक्टर दर्शवतात',
+
+    intakeTitle: 'रिपोर्ट्स व',
+    intakeHighlight: 'कागदपत्रे',
+    intakeSubtitle: 'लॅब रिपोर्ट्स किंवा फोन फोटो स्कॅन करा.',
+    quickTestPresets: 'डेमो टेस्ट्स:',
+    dragDropTitle: 'येथे रिपोर्ट ड्रॅप करा',
+    dragDropSubtitle: 'PDF व फोटो दोन्ही स्वीकारले जातात.',
+    runningOcr: 'OCR स्कॅन सुरू आहे...',
+    saveToPatientRecord: 'नोंदणी करा',
+
+    timelineTitle: 'एकत्रित जीवन',
+    timelineHighlight: 'टाइमलाइन',
+    timelineSubtitle: 'सर्व रिपोर्ट्स एकाच ओघात.',
+    allEvents: 'सर्व नोंदी',
+    labReports: 'लॅब रिपोर्ट्स',
+    homeVitals: 'घरातील नोंदी',
+    symptomJournal: 'लक्षण नोंदवही',
+
+    vitalsTitle: 'घरगुती व्हायटल्स',
+    vitalsHighlight: 'ट्रॅकर',
+    vitalsSubtitle: 'रक्तदाब व शुगर नियमित नोंदवा.',
+    photoOcrBannerTitle: 'स्क्रीन फोटोवरून थेट OCR',
+    photoOcrBannerDesc: 'फोटो काढून आपोआप आकडे भरा.',
+    simulatePhotoCapture: 'फोटो स्कॅन डेमो',
+    logMeasurement: 'नोंद करा',
+
+    journalTitle: 'लक्षणे व आरोग्य',
+    journalHighlight: 'डायरी',
+    journalSubtitle: '०-१० मोजपट्टीवर स्थिती नोंदवा.',
+    severitySliderTitle: 'लक्षण तीव्रता (०-१०)',
+    medAdherenceTitle: 'औषध घेतले का',
+    contextTagsTitle: 'संदर्भ टॅग',
+    saveJournalEntry: 'सेव्ह करा',
+
+    trendsTitle: 'आरोग्य कल व',
+    trendsHighlight: 'विश्लेषण',
+    trendsSubtitle: 'रक्तदाब आणि साखरेचे नियमित विश्लेषण.',
+    trendDetection: 'कल शोधणे',
+    anomalyDetection: 'अचानक बदल',
+    doctorVisitReadout: 'डॉक्टर सारांश',
+
+    prepKitTitle: 'डॉक्टर भेट',
+    prepKitHighlight: 'तयारी किट',
+    prepKitSubtitle: 'डॉक्टरांना विचारायचे प्रश्न तयार करा.',
+    step1Title: 'लक्षणे',
+    step2Title: 'कालावधी',
+    step3Title: 'औषधे',
+    step4Title: 'प्रश्न यादी',
+    synthesizeQuestionList: 'प्रश्न तयार करा',
+    printChecklist: 'प्रिंट करा',
+
+    chatbotTitle: 'वैद्यकीय चॅटबॉट —',
+    chatbotHighlight: 'रुग्ण सहाय्यक',
+    chatbotSubtitle: 'तुमच्या रिपोर्ट्सवर आधारित सोपी उत्तरे.',
+    chatPlaceholder: 'आरोग्याविषयी काहीही विचारा...',
+    send: 'पाठवा',
+    safetyNotice: 'निदान करत नाही. डॉक्टरांचा पर्याय नाही.',
+
+    packetTitle: 'डॉक्टर भेट',
+    packetHighlight: 'पॅकेट (PDF)',
+    printSavePdf: 'प्रिंट / PDF सेव्ह',
+    physician60SecNotice: 'डॉक्टरांच्या ६० सेकंद अवलोकनासाठी',
+  },
+  gu: {
+    appName: 'હેલ્થએઆઈ સમરાઇઝર',
+    tagline: 'દર્દી આરોગ્ય સાથી',
+    dashboard: 'ડેશબોર્ડ',
+    anatomy3D: '3D શરીર',
+    documents: 'રિપોર્ટ્સ OCR',
+    vitals: 'હોમ વાઇટલ્સ',
+    journal: 'ડાયરી',
+    trends: 'ટ્રેન્ડ્સ',
+    specialists: 'નિષ્ણાતો અને નકશો',
+    prepKit: 'મુલાકાત તૈયારી',
+    packetExport: 'ડૉક્ટર પેકેટ',
+    aiChatbot: 'AI સહાયક',
+
+    heroSubtitle: 'દર્દી આરોગ્ય સાથી // 3D શરીર મોડેલ',
+    heroTitleStart: 'તમારી સંપૂર્ણ આરોગ્ય યાત્રા,',
+    heroTitleHighlight: 'સરળ અને સ્પષ્ટ ગુજરાતીમાં.',
+    heroDescription: 'કોઈ અઘરી તબીબી ભાષા વગર તમારા શરીરને 3D માં સમજો, લેબ રિપોર્ટ્સ સ્કેન કરો અને ડૉક્ટરને આત્મવિશ્વાસથી મળો.',
+    heroLaunch3D: '3D મોડેલ શરૂ કરો',
+    heroUploadReport: 'રિપોર્ટ અપલોડ કરો',
+    heroGroundedAI: 'AI સહાયક',
+
+    myHealthDashboard: 'મારું આરોગ્ય',
+    patientCommandCenter: 'કંટ્રોલ સેન્ટર',
+    bloodPressure: 'બ્લડ પ્રેશર (BP)',
+    fastingSugar: 'ફાસ્ટિંગ સુગર',
+    ldlCholesterol: 'કોલેસ્ટ્રોલ (LDL)',
+    kidneyFiltration: 'કિડની કાર્યક્ષમતા',
+    optimalBand: 'ઉત્તમ',
+    preDiabetic: 'પ્રી-ડાયાબિટીક',
+    improving: 'સુધારો ચાલુ',
+    healthy: 'તંદુરસ્ત',
+    aiSummaryBannerTitle: 'સરળ ભાષામાં AI સારાંશ // ઓગસ્ટ - સપ્ટેમ્બર ૨૦૨૬',
+    aiSummaryBannerText: '"તમારું એકંદર આરોગ્ય સ્થિર છે. સવારની દવાઓથી બ્લડ પ્રેશર નિયંત્રણમાં છે."',
+    recentReportsTitle: 'તાજેતરના રિપોર્ટ્સ',
+    uploadNewReport: 'નવો રિપોર્ટ ઉમેરો',
+    parametersExtracted: 'માહિતી મેળવી',
+
+    anatomyExplorerTitle: '3D ઇન્ટરેક્ટિવ',
+    anatomyExplorerHighlight: 'એનાટોમી એક્સપ્લોરર',
+    anatomyExplorerSubtitle: 'અંગો 3D માં જુઓ અને નજીકના નિષ્ણાત ડૉક્ટર શોધો.',
+    searchSymptomPlaceholder: 'લક્ષણ શોધો (ઘૂંટણનો દુખાવો, છાતીમાં ભાર)...',
+    maleModel: 'પુરુષ મોડેલ',
+    femaleModel: 'સ્ત્રી મોડેલ',
+    rotateTip: 'ફેરવવા ખેંચો',
+    regionIdentifier: 'અંગ ઓળખ',
+    commonSymptomsTitle: 'સામાન્ય લક્ષણો',
+    suggestedQuestionsTitle: 'ડૉક્ટરને પૂછવાના પ્રશ્નો',
+    findNearbySpecialist: 'નકશા પર નિષ્ણાત શોધો',
+    addQuestionsToPrepKit: 'પ્રશ્નો કિટમાં ઉમેરો',
+    illustrativeDisclaimer: 'માત્ર શૈક્ષણિક માહિતી માટે.',
+
+    specialistLocatorTitle: 'નિષ્ણાત શોધ અને',
+    specialistLocatorHighlight: 'નકશો',
+    specialistLocatorSubtitle: 'લાલ પિન માર્કર્સ સાથે નજીકના નિષ્ણાતોનો નકશો.',
+    searchDoctorPlaceholder: 'ડૉક્ટર, હોસ્પિટલ શોધો...',
+    maxRadius: 'અંતર',
+    teleconsultation: 'વિડિયો કન્સલ્ટેશન',
+    bookSlot: 'સ્લોટ બુક કરો',
+    consultationFee: 'ફી',
+    nextAvailable: 'ઉપલબ્ધ સમય',
+    mapPinTitle: 'ક્લિનિકલ નકશો',
+    mapPinSubtitle: 'લાલ પિન નજીકના માન્ય ડૉક્ટર્સ દર્શાવે છે',
+
+    intakeTitle: 'રિપોર્ટ્સ અને',
+    intakeHighlight: 'દસ્તાવેજ સ્કેન',
+    intakeSubtitle: 'ફોટો કે લેબ પીડીએફ સ્કેન કરો.',
+    quickTestPresets: 'ડેમો ટેસ્ટ:',
+    dragDropTitle: 'રિપોર્ટ અહીં મૂકો',
+    dragDropSubtitle: 'પીડીએફ કે ફોટો અપલોડ કરો.',
+    runningOcr: 'OCR પ્રક્રિયા ચાલુ છે...',
+    saveToPatientRecord: 'રેકોર્ડમાં સાચવો',
+
+    timelineTitle: 'એકીકૃત જીવન',
+    timelineHighlight: 'ટાઇમલાઇન',
+    timelineSubtitle: 'દરેક રિપોર્ટ એક જ જગ્યાએ.',
+    allEvents: 'બધી વિગતો',
+    labReports: 'લેબ રિપોર્ટ્સ',
+    homeVitals: 'ઘરેલુ માપ',
+    symptomJournal: 'લક્ષણ ડાયરી',
+
+    vitalsTitle: 'હોમ વાઇટલ્સ',
+    vitalsHighlight: 'ટ્રેકર',
+    vitalsSubtitle: 'બ્લડ પ્રેશર અને સુગર નિયમિત નોંધો.',
+    photoOcrBannerTitle: 'સ્ક્રીન ફોટો પરથી OCR',
+    photoOcrBannerDesc: 'ફોટો પાડીને આંકડા સીધા ભરો.',
+    simulatePhotoCapture: 'ફોટો સ્કેન ડેમો',
+    logMeasurement: 'નોંધ કરો',
+
+    journalTitle: 'લક્ષણો અને',
+    journalHighlight: 'ડાયરી',
+    journalSubtitle: '૦-૧૦ સ્કેલ પર સ્થિતિ નોંધો.',
+    severitySliderTitle: 'તીવ્રતા (૦-૧૦)',
+    medAdherenceTitle: 'દવા લીધી કે નહીં',
+    contextTagsTitle: 'સંદર્ભ ટેગ',
+    saveJournalEntry: 'સાચવો',
+
+    trendsTitle: 'આરોગ્ય ટ્રેન્ડ્સ અને',
+    trendsHighlight: 'એનાલિટિક્સ',
+    trendsSubtitle: 'બીપી અને સુગરનું નિયમિત વિશ્લેષણ.',
+    trendDetection: 'ટ્રેન્ડ તપાસ',
+    anomalyDetection: 'અસામાન્ય ફેરફાર',
+    doctorVisitReadout: 'ડૉક્ટર સારાંશ',
+
+    prepKitTitle: 'ડૉક્ટર મુલાકાત',
+    prepKitHighlight: 'તૈયારી કિટ',
+    prepKitSubtitle: 'ડૉક્ટરને પૂછવાના પ્રશ્નોની યાદી બનાવો.',
+    step1Title: 'લક્ષણો',
+    step2Title: 'સમયગાળો',
+    step3Title: 'દવાઓ',
+    step4Title: 'પ્રશ્નો યાદી',
+    synthesizeQuestionList: 'પ્રશ્નો તૈયાર કરો',
+    printChecklist: 'પ્રિન્ટ કરો',
+
+    chatbotTitle: 'મેડિકલ ચેટબોટ —',
+    chatbotHighlight: 'દર્દી સહાયક',
+    chatbotSubtitle: 'રિપોર્ટ્સ આધારિત સરળ સમજૂતી.',
+    chatPlaceholder: 'આરોગ્ય વિષયે પ્રશ્ન પૂછો...',
+    send: 'મોકલો',
+    safetyNotice: 'રોગ નિદાન નથી.',
+
+    packetTitle: 'ડૉક્ટર મુલાકાત',
+    packetHighlight: 'પેકેટ (PDF)',
+    printSavePdf: 'પ્રિન્ટ / PDF સાચવો',
+    physician60SecNotice: 'ડૉક્ટરના ૬૦ સેકન્ડ રિવ્યુ માટે',
+  },
+  kn: {
+    appName: 'ಹೆಲ್ತ್‌ಎಐ ಸಾರಾಂಶ',
+    tagline: 'ರೋಗಿ ಆರೋಗ್ಯ ಮಾರ್ಗದರ್ಶಿ',
+    dashboard: 'ಡ್ಯಾಶ್‌ಬೋರ್ಡ್',
+    anatomy3D: '3D ಶರೀರ',
+    documents: 'ವರದಿಗಳು OCR',
+    vitals: 'ಮನೆಯ ವೈಟಲ್ಸ್',
+    journal: 'ಡೈರಿ',
+    trends: 'ಟ್ರೆಂಡ್‌ಗಳು',
+    specialists: 'ತಜ್ಞರು ಮತ್ತು ನಕ್ಷೆ',
+    prepKit: 'ಭೇಟಿ ಸಿದ್ಧತೆ',
+    packetExport: 'ವೈದ್ಯರ ಪ್ಯಾಕೆಟ್',
+    aiChatbot: 'AI ಸಹಾಯಕ',
+
+    heroSubtitle: 'ರೋಗಿ ಆರೋಗ್ಯ ಸಹಚರ // 3D ಅನ್ಯಾಟಮಿ',
+    heroTitleStart: 'ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಆರೋಗ್ಯ ಪಯಣ,',
+    heroTitleHighlight: 'ಸರಳ ಕನ್ನಡದಲ್ಲಿ.',
+    heroDescription: 'ಕಠಿಣ ವೈದ್ಯಕೀಯ ಪದಗಳಿಲ್ಲದೆ ನಿಮ್ಮ ಶರೀರವನ್ನು 3Dಯಲ್ಲಿ ಅನ್ವೇಷಿಸಿ, ಲ್ಯಾಬ್ ವರದಿಗಳನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ ಮತ್ತು ವೈದ್ಯರನ್ನು ವಿಶ್ವಾಸದಿಂದ ಭೇಟಿ ಮಾಡಿ.',
+    heroLaunch3D: '3D ಶರೀರ ಮಾದರಿ ಆರಂಭಿಸಿ',
+    heroUploadReport: 'ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+    heroGroundedAI: 'AI ಸಹಾಯಕ',
+
+    myHealthDashboard: 'ನನ್ನ ಆರೋಗ್ಯ',
+    patientCommandCenter: 'ಕಮಾಂಡ್ ಸೆಂಟರ್',
+    bloodPressure: 'ರಕ್ತದೊತ್ತಡ (BP)',
+    fastingSugar: 'ಖಾಲಿ ಹೊಟ್ಟೆ ಸಕ್ಕರೆ',
+    ldlCholesterol: 'ಕೊಲೆಸ್ಟ್ರಾಲ್ (LDL)',
+    kidneyFiltration: 'ಮೂತ್ರಪಿಂಡದ ಕ್ರಿಯೆ',
+    optimalBand: 'ಉತ್ತಮ',
+    preDiabetic: 'ಪ್ರಿ-ಡಯಾಬಿಟಿಕ್',
+    improving: 'ಸುಧಾರಿಸುತ್ತಿದೆ',
+    healthy: 'ಆರೋಗ್ಯಕರ',
+    aiSummaryBannerTitle: 'ಸರಳ ಭಾಷೆಯಲ್ಲಿ AI ಸಾರಾಂಶ // ಆಗಸ್ಟ್ - ಸೆಪ್ಟೆಂಬರ್ 2026',
+    aiSummaryBannerText: '"ನಿಮ್ಮ ಒಟ್ಟಾರೆ ಆರೋಗ್ಯ ಸ್ಥಿರವಾಗಿದೆ. ರಕ್ತದೊತ್ತಡ ನಿಯಂತ್ರಣದಲ್ಲಿದೆ."',
+    recentReportsTitle: 'ಇತ್ತೀಚಿನ ವರದಿಗಳು',
+    uploadNewReport: 'ಹೊಸ ವರದಿ ಸೇರಿಸಿ',
+    parametersExtracted: 'ಅಂಶಗಳು ಲಭ್ಯ',
+
+    anatomyExplorerTitle: '3D ಇಂಟರಾಕ್ಟಿವ್',
+    anatomyExplorerHighlight: 'ಅನ್ಯಾಟಮಿ ಎಕ್ಸ್‌ಪ್ಲೋರರ್',
+    anatomyExplorerSubtitle: 'ಅಂಗಾಂಗಗಳನ್ನು 3Dಯಲ್ಲಿ ವೀಕ್ಷಿಸಿ ಮತ್ತು ನಕ್ಷೆಯಲ್ಲಿ ತಜ್ಞರನ್ನು ಹುಡುಕಿ.',
+    searchSymptomPlaceholder: 'ಲಕ್ಷಣ ಹುಡುಕಿ (ಮೊಣಕಾಲು ನೋವು, ಎದೆ ಬಿಗಿತ)...',
+    maleModel: 'ಪುರುಷ ಮಾದರಿ',
+    femaleModel: 'ಮಹಿಳಾ ಮಾದರಿ',
+    rotateTip: 'ತಿರುಗಿಸಲು ಎಳೆಯಿರಿ',
+    regionIdentifier: 'ಅಂಗ ಗುರುತು',
+    commonSymptomsTitle: 'ಸಾಮಾನ್ಯ ಲಕ್ಷಣಗಳು',
+    suggestedQuestionsTitle: 'ವೈದ್ಯರಿಗೆ ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳು',
+    findNearbySpecialist: 'ನಕ್ಷೆಯಲ್ಲಿ ತಜ್ಞರನ್ನು ಹುಡುಕಿ',
+    addQuestionsToPrepKit: 'ಪ್ರಶ್ನೆಗಳನ್ನು ಕಿಟ್‌ಗೆ ಸೇರಿಸಿ',
+    illustrativeDisclaimer: 'ಮಾಹಿತಿಗಾಗಿ ಮಾತ್ರ.',
+
+    specialistLocatorTitle: 'ತಜ್ಞರ ಹುಡುಕಾಟ ಮತ್ತು',
+    specialistLocatorHighlight: 'ಇಂಟರಾಕ್ಟಿವ್ ನಕ್ಷೆ',
+    specialistLocatorSubtitle: 'ಕೆಂಪು ಪಿನ್ ಗುರುತುಗಳೊಂದಿಗೆ ಸಮೀಪದ ವೈದ್ಯರ ವಿವರಗಳು.',
+    searchDoctorPlaceholder: 'ವೈದ್ಯರು, ಆಸ್ಪತ್ರೆ ಹುಡುಕಿ...',
+    maxRadius: 'ದೂರ ಮಿತಿ',
+    teleconsultation: 'ವಿಡಿಯೋ ಸಮಾಲೋಚನೆ',
+    bookSlot: 'ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ',
+    consultationFee: 'ಶುಲ್ಕ',
+    nextAvailable: 'ಲಭ್ಯವಿರುವ ಸಮಯ',
+    mapPinTitle: 'ಕ್ಲಿನಿಕಲ್ ನಕ್ಷೆ',
+    mapPinSubtitle: 'ಕೆಂಪು ಪಿನ್‌ಗಳು ಸಮೀಪದ ವೈದ್ಯರನ್ನು ಸೂಚಿಸುತ್ತವೆ',
+
+    intakeTitle: 'ವರದಿಗಳು ಮತ್ತು',
+    intakeHighlight: 'ದಾಖಲೆ ಸ್ಕ್ಯಾನ್',
+    intakeSubtitle: 'ಲ್ಯಾಬ್ ವರದಿಗಳನ್ನು ಸುಲಭವಾಗಿ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ.',
+    quickTestPresets: 'ಡೆಮೊ ಟೆಸ್ಟ್‌ಗಳು:',
+    dragDropTitle: 'ವರದಿಯನ್ನು ಇಲ್ಲಿ ಎಳೆಯಿರಿ',
+    dragDropSubtitle: 'PDF ಅಥವಾ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.',
+    runningOcr: 'OCR ಸ್ಕ್ಯಾನ್ ನಡೆಯುತ್ತಿದೆ...',
+    saveToPatientRecord: 'ದಾಖಲೆಯಲ್ಲಿ ಉಳಿಸಿ',
+
+    timelineTitle: 'ಸಂಘಟಿತ ಜೀವನ',
+    timelineHighlight: 'ಟೈಮ್‌ಲೈನ್',
+    timelineSubtitle: 'ಎಲ್ಲಾ ವರದಿಗಳು ಒಂದೇ ಕಾಲಾನುಕ್ರಮದಲ್ಲಿ.',
+    allEvents: 'ಎಲ್ಲಾ ವಿವರ',
+    labReports: 'ಲ್ಯಾಬ್ ವರದಿಗಳು',
+    homeVitals: 'ಮನೆಯ ವೈಟಲ್ಸ್',
+    symptomJournal: 'ರೋಗಲಕ್ಷಣ ಡೈರಿ',
+
+    vitalsTitle: 'ಮನೆಯ ವೈಟಲ್ಸ್',
+    vitalsHighlight: 'ಟ್ರ್ಯಾಕರ್',
+    vitalsSubtitle: 'ರಕ್ತದೊತ್ತಡ ಮತ್ತು ಸಕ್ಕರೆ ಅಂಶ ದಾಖಲಿಸಿ.',
+    photoOcrBannerTitle: 'ಸ್ಕ್ರೀನ್ ಫೋಟೋದಿಂದ OCR',
+    photoOcrBannerDesc: 'ಫೋಟೋ ತೆಗೆದು ಸಂಖ್ಯೆಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.',
+    simulatePhotoCapture: 'ಫೋಟೋ ಸ್ಕ್ಯಾನ್ ಡೆಮೊ',
+    logMeasurement: 'ದಾಖಲಿಸಿ',
+
+    journalTitle: 'ರೋಗಲಕ್ಷಣ ಮತ್ತು',
+    journalHighlight: 'ಡೈರಿ',
+    journalSubtitle: '0-10 ಅಳತೆಯಲ್ಲಿ ನಿಮ್ಮ ನೋವನ್ನು ದಾಖಲಿಸಿ.',
+    severitySliderTitle: 'ತೀವ್ರತೆ (0-10)',
+    medAdherenceTitle: 'ಔಷಧ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ',
+    contextTagsTitle: 'ಸಂದರ್ಭ ಟ್ಯಾಗ್‌ಗಳು',
+    saveJournalEntry: 'ಉಳಿಸಿ',
+
+    trendsTitle: 'ಟ್ರೆಂಡ್‌ಗಳು ಮತ್ತು',
+    trendsHighlight: 'ವಿಶ್ಲೇಷಣೆ',
+    trendsSubtitle: 'ತಿಂಗಳಿನಿಂದ ತಿಂಗಳಿಗೆ ಆರೋಗ್ಯ ಬದಲಾವಣೆ.',
+    trendDetection: 'ಟ್ರೆಂಡ್ ಪತ್ತೆ',
+    anomalyDetection: 'ಅಸಹಜ ಬದಲಾವಣೆ',
+    doctorVisitReadout: 'ವೈದ್ಯರ ಸಾರಾಂಶ',
+
+    prepKitTitle: 'ವೈದ್ಯರ ಭೇಟಿ',
+    prepKitHighlight: 'ಸಿದ್ಧತೆ ಕಿಟ್',
+    prepKitSubtitle: 'ವೈದ್ಯರಿಗೆ ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ.',
+    step1Title: 'ಲಕ್ಷಣಗಳು',
+    step2Title: 'ಅವಧಿ',
+    step3Title: 'ಔಷಧಗಳು',
+    step4Title: 'ಪ್ರಶ್ನೆಗಳ ಪಟ್ಟಿ',
+    synthesizeQuestionList: 'ಪ್ರಶ್ನೆಗಳನ್ನು ತಯಾರಿಸಿ',
+    printChecklist: 'ಪ್ರಿಂಟ್ ಮಾಡಿ',
+
+    chatbotTitle: 'ವೈದ್ಯಕೀಯ ಚಾಟ್‌ಬಾಟ್ —',
+    chatbotHighlight: 'ರೋಗಿ ಸಹಾಯಕ',
+    chatbotSubtitle: 'ವರದಿಗಳ ಆಧಾರದ ಮೇಲೆ ಸರಳ ವಿವರಣೆ.',
+    chatPlaceholder: 'ಆರೋಗ್ಯದ ಬಗ್ಗೆ ಪ್ರಶ್ನಿಸಿ...',
+    send: 'ಕಳುಹಿಸಿ',
+    safetyNotice: 'ರೋಗನಿರ್ಣಯ ಮಾಡುವುದಿಲ್ಲ.',
+
+    packetTitle: 'ವೈದ್ಯರ ಭೇಟಿ',
+    packetHighlight: 'ಪ್ಯಾಕೆಟ್ (PDF)',
+    printSavePdf: 'ಪ್ರಿಂಟ್ / PDF ಉಳಿಸಿ',
+    physician60SecNotice: 'ವೈದ್ಯರ 60 ಸೆಕೆಂಡ್‌ಗಳ ಪರಿಶೀಲನೆಗಾಗಿ',
+  },
+  ml: {
+    appName: 'ഹെൽത്ത് എഐ സമ്മറൈസർ',
+    tagline: 'രോഗിയുടെ ആരോഗ്യ സഹായി',
+    dashboard: 'ഡാഷ്‌ബോർഡ്',
+    anatomy3D: '3D ശരീരം',
+    documents: 'റിപ്പോർട്ടുകൾ OCR',
+    vitals: 'ഹോം വൈറ്റൽസ്',
+    journal: 'ഡയറി',
+    trends: 'ട്രെൻഡുകൾ',
+    specialists: 'വിദഗ്ദ്ധർ & മാപ്പ്',
+    prepKit: 'സന്ദർശന തയ്യാറെടുപ്പ്',
+    packetExport: 'ഡോക്ടർ പാക്കറ്റ്',
+    aiChatbot: 'AI അസിസ്റ്റന്റ്',
+
+    heroSubtitle: 'രോഗിയുടെ ആരോഗ്യ സഹായി // 3D ശരീരം',
+    heroTitleStart: 'നിങ്ങളുടെ ആരോഗ്യ കഥ,',
+    heroTitleHighlight: 'ലളിതമായ മലയാളത്തിൽ.',
+    heroDescription: 'സങ്കീർണ്ണമായ മെഡിക്കൽ പദങ്ങളില്ലാതെ നിങ്ങളുടെ ശരീരം 3Dയിൽ മനസ്സിലാക്കൂ, ലാബ് റിപ്പോർട്ടുകൾ സ്കാൻ ചെയ്യൂ.',
+    heroLaunch3D: '3D ശരീരം കാണുക',
+    heroUploadReport: 'റിപ്പോർട്ട് നൽകുക',
+    heroGroundedAI: 'AI അസിസ്റ്റന്റ്',
+
+    myHealthDashboard: 'എന്റെ ആരോഗ്യം',
+    patientCommandCenter: 'കമാൻഡ് സെന്റർ',
+    bloodPressure: 'രക്തസമ്മർദ്ദം (BP)',
+    fastingSugar: 'ഫാസ്റ്റിംഗ് ഷുഗർ',
+    ldlCholesterol: 'കൊളസ്ട്രോൾ (LDL)',
+    kidneyFiltration: 'വൃക്ക പ്രവർത്തനം',
+    optimalBand: 'മികച്ചത്',
+    preDiabetic: 'പ്രീ-ഡയബറ്റിക്',
+    improving: 'മെച്ചപ്പെടുന്നു',
+    healthy: 'ആരോഗ്യമുള്ളത്',
+    aiSummaryBannerTitle: 'ലളിതമായ AI സംഗ്രഹം // ആഗസ്റ്റ് - സെപ്റ്റംബർ 2026',
+    aiSummaryBannerText: '"നിങ്ങളുടെ ആരോഗ്യം തൃപ്തികരമായി തുടരുന്നു. രക്തസമ്മർദ്ദം നിയന്ത്രണത്തിലാണ്."',
+    recentReportsTitle: 'സമീപകാല റിപ്പോർട്ടുകൾ',
+    uploadNewReport: 'പുതിയ റിപ്പോർട്ട് ചേർക്കുക',
+    parametersExtracted: 'വിവരങ്ങൾ ലഭ്യമാണ്',
+
+    anatomyExplorerTitle: '3D ഇന്ററാക്ടീവ്',
+    anatomyExplorerHighlight: 'അനാട്ടമി എക്സ്പ്ലോറർ',
+    anatomyExplorerSubtitle: 'അവയവങ്ങൾ 3Dയിൽ കാണുക, മാപ്പിൽ ഡോക്ടർമാരെ കണ്ടെത്തുക.',
+    searchSymptomPlaceholder: 'ലക്ഷണം തിരയുക (മുട്ടുവേദന, നെഞ്ചുവേദന)...',
+    maleModel: 'പുരുഷ മാതൃക',
+    femaleModel: 'സ്ത്രീ മാതൃക',
+    rotateTip: 'തിരിക്കാൻ വലിക്കുക',
+    regionIdentifier: 'അവയവം കണ്ടെത്തൽ',
+    commonSymptomsTitle: 'സാധാരണ ലക്ഷണങ്ങൾ',
+    suggestedQuestionsTitle: 'ഡോക്ടറോട് ചോദിക്കേണ്ടവ',
+    findNearbySpecialist: 'മാപ്പിൽ ഡോക്ടറെ കണ്ടെത്തുക',
+    addQuestionsToPrepKit: 'ചോദ്യങ്ങൾ ചേർക്കുക',
+    illustrativeDisclaimer: 'വിവരങ്ങൾക്കായി മാത്രം.',
+
+    specialistLocatorTitle: 'വിദഗ്ദ്ധ ഡോക്ടർമാരും',
+    specialistLocatorHighlight: 'ഇന്ററാക്ടീവ് മാപ്പും',
+    specialistLocatorSubtitle: 'ചുവന്ന പിൻ അടയാളങ്ങളുള്ള സമീപത്തെ ഡോക്ടർമാരുടെ മാപ്പ്.',
+    searchDoctorPlaceholder: 'ഡോക്ടറെ, ആശുപത്രിയെ തിരയുക...',
+    maxRadius: 'ദൂരപരിധി',
+    teleconsultation: 'വീഡിയോ കൺസൾട്ടേഷൻ',
+    bookSlot: 'ബുക്ക് ചെയ്യുക',
+    consultationFee: 'ഫീസ്',
+    nextAvailable: 'ലഭ്യമായ സമയം',
+    mapPinTitle: 'ക്ലിനിക്കൽ ലൊക്കേഷൻ മാപ്പ്',
+    mapPinSubtitle: 'ചുവന്ന പിന്നുകൾ ഡോക്ടർമാരെ സൂചിപ്പിക്കുന്നു',
+
+    intakeTitle: 'റിപ്പോർട്ടുകളും',
+    intakeHighlight: 'സ്കാനിംഗും',
+    intakeSubtitle: 'ലാബ് റിപ്പോർട്ടുകൾ എളുപ്പത്തിൽ സ്കാൻ ചെയ്യാം.',
+    quickTestPresets: 'ഡെമോ ടെസ്റ്റുകൾ:',
+    dragDropTitle: 'റിപ്പോർട്ട് ഇവിടെ ഡ്രോപ്പ് ചെയ്യുക',
+    dragDropSubtitle: 'PDF അല്ലെങ്കിൽ ഫോട്ടോ നൽകുക.',
+    runningOcr: 'OCR സ്കാനിംഗ് നടക്കുന്നു...',
+    saveToPatientRecord: 'രേഖകളിൽ സൂക്ഷിക്കുക',
+
+    timelineTitle: 'ജീവിതരേഖ',
+    timelineHighlight: 'ടൈംലൈൻ',
+    timelineSubtitle: 'എല്ലാ വിവരങ്ങളും ഒരൊറ്റ വഴിയിൽ.',
+    allEvents: 'എല്ലാ രേഖകളും',
+    labReports: 'ലാബ് റിപ്പോർട്ട്',
+    homeVitals: 'ഹോം വൈറ്റൽസ്',
+    symptomJournal: 'ലക്ഷണ ഡയറി',
+
+    vitalsTitle: 'ഹോം വൈറ്റൽസ്',
+    vitalsHighlight: 'ട്രാക്കർ',
+    vitalsSubtitle: 'ബിപിയും ഷുഗറും കൃത്യമായി കുറിച്ചുവെക്കുക.',
+    photoOcrBannerTitle: 'മോണിറ്റർ സ്ക്രീനിൽ നിന്ന് OCR',
+    photoOcrBannerDesc: 'ഫോട്ടോ എടുത്ത് അളവുകൾ രേഖപ്പെടുത്താം.',
+    simulatePhotoCapture: 'ഫോട്ടോ സ്കാൻ ഡെമോ',
+    logMeasurement: 'രേഖപ്പെടുത്തുക',
+
+    journalTitle: 'ലക്ഷണങ്ങളും',
+    journalHighlight: 'ഡയറിയും',
+    journalSubtitle: '0-10 സ്കെയിലിൽ വേദന രേഖപ്പെടുത്തുക.',
+    severitySliderTitle: 'തീവ്രത (0-10)',
+    medAdherenceTitle: 'മരുന്ന് കഴിച്ചോ',
+    contextTagsTitle: 'സന്ദർഭങ്ങൾ',
+    saveJournalEntry: 'സേവ് ചെയ്യുക',
+
+    trendsTitle: 'ട്രെൻഡുകളും',
+    trendsHighlight: 'വിശകലനവും',
+    trendsSubtitle: 'ആരോഗ്യ പുരോഗതിയുടെ കൃത്യമായ കണക്കുകൾ.',
+    trendDetection: 'മാറ്റങ്ങൾ അറിയുക',
+    anomalyDetection: 'പെട്ടെന്നുള്ള വ്യതിയാനം',
+    doctorVisitReadout: 'ഡോക്ടർ സംഗ്രഹം',
+
+    prepKitTitle: 'ഡോക്ടർ സന്ദർശന',
+    prepKitHighlight: 'തയ്യാറെടുപ്പ് കിറ്റ്',
+    prepKitSubtitle: 'ഡോക്ടറോട് ചോദിക്കാനുള്ള ചോദ്യങ്ങൾ തയ്യാറാക്കുക.',
+    step1Title: 'ലക്ഷണങ്ങൾ',
+    step2Title: 'ദിവസങ്ങൾ',
+    step3Title: 'മരുന്നുകൾ',
+    step4Title: 'ചോദ്യങ്ങൾ',
+    synthesizeQuestionList: 'ചോദ്യങ്ങൾ ഉണ്ടാക്കുക',
+    printChecklist: 'പ്രിന്റ് ചെയ്യുക',
+
+    chatbotTitle: 'മെഡിക്കൽ ചാറ്റ്ബോട്ട് —',
+    chatbotHighlight: 'രോഗി സഹായി',
+    chatbotSubtitle: 'റിപ്പോർട്ടുകൾ അടിസ്ഥാനമാക്കിയുള്ള ലളിതമായ വിവരങ്ങൾ.',
+    chatPlaceholder: 'സംശയങ്ങൾ ചോദിക്കുക...',
+    send: 'അയക്കുക',
+    safetyNotice: 'രോഗനിർണയം നടത്തുകയില്ല.',
+
+    packetTitle: 'ഡോക്ടർ സന്ദർശന',
+    packetHighlight: 'പാക്കറ്റ് (PDF)',
+    printSavePdf: 'പ്രിന്റ് / PDF സേവ്',
+    physician60SecNotice: 'ഡോക്ടർക്ക് 60 സെക്കൻഡിൽ അറിയാൻ',
+  },
+  pa: {
+    appName: 'ਹੈਲਥ ਏਆਈ ਸਮਰੀ',
+    tagline: 'ਮਰੀਜ਼ ਸਿਹਤ ਸਾਥੀ',
+    dashboard: 'ਡੈਸ਼ਬੋਰਡ',
+    anatomy3D: '3D ਸਰੀਰ',
+    documents: 'ਰਿਪੋਰਟਾਂ OCR',
+    vitals: 'ਘਰੇਲੂ ਵਾਈਟਲਸ',
+    journal: 'ਡਾਇਰੀ',
+    trends: 'ਰੁਝਾਨ',
+    specialists: 'ਮਾਹਿਰ ਅਤੇ ਨਕਸ਼ਾ',
+    prepKit: 'ਡਾਕਟਰ ਤਿਆਰੀ',
+    packetExport: 'ਡਾਕਟਰ ਪੈਕੇਟ',
+    aiChatbot: 'AI ਸਹਾਇਕ',
+
+    heroSubtitle: 'ਮਰੀਜ਼ ਸਿਹਤ ਸਾਥੀ // 3D ਐਨਾਟੋਮੀ',
+    heroTitleStart: 'ਤੁਹਾਡੀ ਪੂਰੀ ਸਿਹਤ ਕਹਾਣੀ,',
+    heroTitleHighlight: 'ਸਰਲ ਅਤੇ ਸਪੱਸ਼ਟ ਪੰਜਾਬੀ ਵਿੱਚ।',
+    heroDescription: 'ਕੋਈ ਔਖੇ ਮੈਡੀਕਲ ਸ਼ਬਦ ਨਹੀਂ। ਆਪਣੇ ਸਰੀਰ ਨੂੰ 3D ਵਿੱਚ ਦੇਖੋ, ਲੈਬ ਰਿਪੋਰਟਾਂ ਸਕੈਨ ਕਰੋ ਅਤੇ ਡਾਕਟਰ ਨੂੰ ਪੂਰੇ ਭਰੋਸੇ ਨਾਲ ਮਿਲੋ।',
+    heroLaunch3D: '3D ਸਰੀਰ ਮਾਡਲ ਸ਼ੁਰੂ ਕਰੋ',
+    heroUploadReport: 'ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
+    heroGroundedAI: 'AI ਸਹਾਇਕ',
+
+    myHealthDashboard: 'ਮੇਰੀ ਸਿਹਤ',
+    patientCommandCenter: 'ਕਮਾਂਡ ਸੈਂਟਰ',
+    bloodPressure: 'ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ (BP)',
+    fastingSugar: 'ਖਾਲੀ ਪੇਟ ਸ਼ੂਗਰ',
+    ldlCholesterol: 'ਕੋਲੈਸਟ੍ਰੋਲ (LDL)',
+    kidneyFiltration: 'ਗੁਰਦੇ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ',
+    optimalBand: 'ਉੱਤਮ',
+    preDiabetic: 'ਪ੍ਰੀ-ਡਾਇਬੀਟਿਕ',
+    improving: 'ਸੁਧਾਰ ਹੋ ਰਿਹਾ ਹੈ',
+    healthy: 'ਤੰਦਰੁਸਤ',
+    aiSummaryBannerTitle: 'ਸਰਲ ਭਾਸ਼ਾ ਵਿੱਚ AI ਸਾਰੰਸ਼ // ਅਗਸਤ - ਸਤੰਬਰ 2026',
+    aiSummaryBannerText: '"ਤੁਹਾਡੀ ਸਮੁੱਚੀ ਸਿਹਤ ਸਥਿਰ ਹੈ। ਸਵੇਰ ਦੀ ਦਵਾਈ ਨਾਲ ਬੀਪੀ ਕੰਟਰੋਲ ਵਿੱਚ ਹੈ।"',
+    recentReportsTitle: 'ਹਾਲੀਆ ਰਿਪੋਰਟਾਂ',
+    uploadNewReport: 'ਨਵੀਂ ਰਿਪੋਰਟ ਜੋੜੋ',
+    parametersExtracted: 'ਨਤੀਜੇ ਕੱਢੇ ਗਏ',
+
+    anatomyExplorerTitle: '3D ਇੰਟਰਐਕਟਿਵ',
+    anatomyExplorerHighlight: 'ਸਰੀਰ ਐਕਸਪਲੋਰਰ',
+    anatomyExplorerSubtitle: 'ਅੰਗਾਂ ਨੂੰ 3D ਵਿੱਚ ਦੇਖੋ ਅਤੇ ਨਕਸ਼ੇ ਉੱਤੇ ਮਾਹਿਰ ਲੱਭੋ।',
+    searchSymptomPlaceholder: 'ਲੱਛਣ ਲਿਖੋ (ਗੋਡੇ ਦਾ ਦਰਦ, ਛਾਤੀ ਵਿੱਚ ਭਾਰਾਪਣ)...',
+    maleModel: 'ਪੁਰਸ਼ ਮਾਡਲ',
+    femaleModel: 'ਮਹਿਲਾ ਮਾਡਲ',
+    rotateTip: 'ਘੁਮਾਉਣ ਲਈ ਖਿੱਚੋ',
+    regionIdentifier: 'ਅੰਗ ਪਛਾਣ',
+    commonSymptomsTitle: 'ਆਮ ਲੱਛਣ',
+    suggestedQuestionsTitle: 'ਡਾਕਟਰ ਨੂੰ ਪੁੱਛਣ ਵਾਲੇ ਸਵਾਲ',
+    findNearbySpecialist: 'ਨਕਸ਼ੇ ਉੱਤੇ ਮਾਹਿਰ ਲੱਭੋ',
+    addQuestionsToPrepKit: 'ਕਿੱਟ ਵਿੱਚ ਸਵਾਲ ਜੋੜੋ',
+    illustrativeDisclaimer: 'ਸਿਰਫ਼ ਜਾਣਕਾਰੀ ਲਈ।',
+
+    specialistLocatorTitle: 'ਮਾਹਿਰ ਖੋਜ ਅਤੇ',
+    specialistLocatorHighlight: 'ਇੰਟਰਐਕਟਿਵ ਨਕਸ਼ਾ',
+    specialistLocatorSubtitle: 'ਲਾਲ ਪਿੰਨ ਨਿਸ਼ਾਨਾਂ ਨਾਲ ਨਕਸ਼ੇ ਉੱਤੇ ਨੇੜਲੇ ਡਾਕਟਰ।',
+    searchDoctorPlaceholder: 'ਡਾਕਟਰ ਜਾਂ ਹਸਪਤਾਲ ਲੱਭੋ...',
+    maxRadius: 'ਦੂਰੀ',
+    teleconsultation: 'ਵੀਡੀਓ ਕਾਲ',
+    bookSlot: 'ਸਲਾਟ ਬੁੱਕ ਕਰੋ',
+    consultationFee: 'ਫੀਸ',
+    nextAvailable: 'ਉਪਲਬਧ ਸਮਾਂ',
+    mapPinTitle: 'ਕਲੀਨਿਕਲ ਨਕਸ਼ਾ',
+    mapPinSubtitle: 'ਲਾਲ ਪਿੰਨ ਨੇੜਲੇ ਡਾਕਟਰਾਂ ਨੂੰ ਦਰਸਾਉਂਦੇ ਹਨ',
+
+    intakeTitle: 'ਰਿਪੋਰਟਾਂ ਅਤੇ',
+    intakeHighlight: 'ਦਸਤਾਵੇਜ਼ ਸਕੈਨ',
+    intakeSubtitle: 'ਲੈਬ ਰਿਪੋਰਟਾਂ ਅਤੇ ਫੋਟੋਆਂ ਸਕੈਨ ਕਰੋ।',
+    quickTestPresets: 'ਡੈਮੋ ਟੈਸਟ:',
+    dragDropTitle: 'ਰਿਪੋਰਟ ਇੱਥੇ ਪਾਓ',
+    dragDropSubtitle: 'PDF ਜਾਂ ਫੋਟੋ ਅੱਪਲੋਡ ਕਰੋ।',
+    runningOcr: 'OCR ਸਕੈਨਿੰਗ ਚੱਲ ਰਹੀ ਹੈ...',
+    saveToPatientRecord: 'ਰਿਕਾਰਡ ਵਿੱਚ ਸੰਭਾਲੋ',
+
+    timelineTitle: 'ਸਾਂਝੀ ਜੀਵਨ',
+    timelineHighlight: 'ਟਾਈਮਲਾਈਨ',
+    timelineSubtitle: 'ਸਾਰੀਆਂ ਰਿਪੋਰਟਾਂ ਇੱਕੋ ਲੜੀ ਵਿੱਚ।',
+    allEvents: 'ਸਾਰੇ ਵੇਰਵੇ',
+    labReports: 'ਲੈਬ ਰਿਪੋਰਟਾਂ',
+    homeVitals: 'ਘਰੇਲੂ ਰੀਡਿੰਗ',
+    symptomJournal: 'ਲੱਛਣ ਡਾਇਰੀ',
+
+    vitalsTitle: 'ਘਰੇਲੂ ਵਾਈਟਲਸ',
+    vitalsHighlight: 'ਟਰੈਕਰ',
+    vitalsSubtitle: 'ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ ਅਤੇ ਸ਼ੂਗਰ ਰਿਕਾਰਡ ਕਰੋ।',
+    photoOcrBannerTitle: 'ਸਕ੍ਰੀਨ ਫੋਟੋ ਤੋਂ ਸਿੱਧਾ OCR',
+    photoOcrBannerDesc: 'ਫੋਟੋ ਖਿੱਚ ਕੇ ਅੰਕ ਆਪਣੇ ਆਪ ਭਰੋ।',
+    simulatePhotoCapture: 'ਫੋਟੋ ਸਕੈਨ ਡੈਮੋ',
+    logMeasurement: 'ਦਰਜ ਕਰੋ',
+
+    journalTitle: 'ਲੱਛਣ ਅਤੇ',
+    journalHighlight: 'ਡਾਇਰੀ',
+    journalSubtitle: '0-10 ਪੈਮਾਨੇ ਤੇ ਦਰਦ ਨੋਟ ਕਰੋ।',
+    severitySliderTitle: 'ਤੀਬਰਤਾ (0-10)',
+    medAdherenceTitle: 'ਦਵਾਈ ਲਈ ਜਾਂ ਨਹੀਂ',
+    contextTagsTitle: 'ਸੰਦਰਭ ਟੈਗ',
+    saveJournalEntry: 'ਸੰਭਾਲੋ',
+
+    trendsTitle: 'ਸਿਹਤ ਰੁਝਾਨ ਅਤੇ',
+    trendsHighlight: 'ਵਿਸ਼ਲੇਸ਼ਣ',
+    trendsSubtitle: 'ਬੀਪੀ ਅਤੇ ਸ਼ੂਗਰ ਦਾ ਮਹੀਨਾਵਾਰ ਵਿਸ਼ਲੇਸ਼ਣ।',
+    trendDetection: 'ਰੁਝਾਨ ਪਛਾਣ',
+    anomalyDetection: 'ਅਚਾਨਕ ਤਬਦੀਲੀ',
+    doctorVisitReadout: 'ਡਾਕਟਰ ਰਿਪੋਰਟ',
+
+    prepKitTitle: 'ਡਾਕਟਰ ਮੁਲਾਕਾਤ',
+    prepKitHighlight: 'ਤਿਆਰੀ ਕਿੱਟ',
+    prepKitSubtitle: 'ਡਾਕਟਰ ਨੂੰ ਪੁੱਛਣ ਵਾਲੇ ਸਵਾਲ ਤਿਆਰ ਕਰੋ।',
+    step1Title: 'ਲੱਛਣ',
+    step2Title: 'ਸਮਾਂ',
+    step3Title: 'ਦਵਾਈਆਂ',
+    step4Title: 'ਸਵਾਲ ਸੂਚੀ',
+    synthesizeQuestionList: 'ਸਵਾਲ ਤਿਆਰ ਕਰੋ',
+    printChecklist: 'ਪ੍ਰਿੰਟ ਕਰੋ',
+
+    chatbotTitle: 'ਮੈਡੀਕਲ ਚੈਟਬੋਟ —',
+    chatbotHighlight: 'ਮਰੀਜ਼ ਸਹਾਇਕ',
+    chatbotSubtitle: 'ਤੁਹਾਡੀਆਂ ਰਿਪੋਰਟਾਂ ਤੇ ਆਧਾਰਿਤ ਜਾਣਕਾਰੀ।',
+    chatPlaceholder: 'ਆਪਣੀ ਸਿਹਤ ਬਾਰੇ ਪੁੱਛੋ...',
+    send: 'ਭੇਜੋ',
+    safetyNotice: 'ਇਹ ਡਾਕਟਰੀ ਇਲਾਜ ਨਹੀਂ ਹੈ।',
+
+    packetTitle: 'ਡਾਕਟਰ ਮੁਲਾਕਾਤ',
+    packetHighlight: 'ਪੈਕੇਟ (PDF)',
+    printSavePdf: 'ਪ੍ਰਿੰਟ / PDF ਸੰਭਾਲੋ',
+    physician60SecNotice: 'ਡਾਕਟਰ ਦੇ 60 ਸੈਕਿੰਡ ਰਿਵਿਊ ਲਈ',
+  },
+  or: {
+    appName: 'ହେଲ୍ଥ ଏଆଇ ସାରାଂଶ',
+    tagline: 'ରୋଗୀ ସ୍ୱାସ୍ଥ୍ୟ ସାଥୀ',
+    dashboard: 'ଡ୍ୟାସବୋର୍ଡ',
+    anatomy3D: '3D ଶରୀର',
+    documents: 'ରିପୋର୍ଟ OCR',
+    vitals: 'ଘରୋଇ ଭାଇଟାଲ୍ସ',
+    journal: 'ଡାଏରୀ',
+    trends: 'ପ୍ରବୃତ୍ତି',
+    specialists: 'ବିଶେଷଜ୍ଞ ଓ ମ୍ୟାପ୍',
+    prepKit: 'ଡାକ୍ତର ସାକ୍ଷାତ',
+    packetExport: 'ଡାକ୍ତର ପ୍ୟାକେଟ୍',
+    aiChatbot: 'AI ସହାୟକ',
+
+    heroSubtitle: 'ରୋଗୀ ସ୍ୱାସ୍ଥ୍ୟ ସାଥୀ // 3D ଶରୀର ମଡେଲ',
+    heroTitleStart: 'ଆପଣଙ୍କ ସମ୍ପୂର୍ଣ୍ଣ ସ୍ୱାସ୍ଥ୍ୟ ଯାତ୍ରା,',
+    heroTitleHighlight: 'ସରଳ ଓ ସ୍ପଷ୍ଟ ଓଡ଼ିଆରେ।',
+    heroDescription: 'କୌଣସି ଜଟିଳ ମେଡିକାଲ ଶବ୍ଦ ବିନା ନିଜ ଶରୀରକୁ 3Dରେ ବୁଝନ୍ତୁ, ରିପୋର୍ଟ ସ୍କାନ କରନ୍ତୁ ଏବଂ ଡାକ୍ତରଙ୍କୁ ଆତ୍ମବିଶ୍ୱାସର ସହିତ ସାକ୍ଷାତ କରନ୍ତୁ।',
+    heroLaunch3D: '3D ଶରୀର ଆରମ୍ଭ କରନ୍ତୁ',
+    heroUploadReport: 'ରିପୋର୍ଟ ଅପଲୋଡ କରନ୍ତୁ',
+    heroGroundedAI: 'AI ସହାୟକ',
+
+    myHealthDashboard: 'ମୋର ସ୍ୱାସ୍ଥ୍ୟ',
+    patientCommandCenter: 'କମାଣ୍ଡ ସେଣ୍ଟର',
+    bloodPressure: 'ରକ୍ତଚାପ (BP)',
+    fastingSugar: 'ଫାଷ୍ଟିଙ୍ଗ୍ ସୁଗାର',
+    ldlCholesterol: 'କୋଲେଷ୍ଟ୍ରଲ (LDL)',
+    kidneyFiltration: 'କିଡନୀ କାର୍ଯ୍ୟଦକ୍ଷତା',
+    optimalBand: 'ଉତ୍ତମ',
+    preDiabetic: 'ପ୍ରି-ଡାଇବେଟିକ୍',
+    improving: 'ଉନ୍ନତି ହେଉଛି',
+    healthy: 'ସୁସ୍ଥ',
+    aiSummaryBannerTitle: 'ସରଳ ଭାଷାରେ AI ସାରାଂଶ // ଅଗଷ୍ଟ - ସେପ୍ଟେମ୍ବର ୨୦୨୬',
+    aiSummaryBannerText: '"ଆପଣଙ୍କ ସ୍ୱାସ୍ଥ୍ୟ ସ୍ଥିର ଅଛି। ସକାଳର ଔଷଧ ଦ୍ୱାରା ରକ୍ତଚାପ ନିୟନ୍ତ୍ରଣରେ ଅଛି।"',
+    recentReportsTitle: 'ନିକଟ ଅତୀତର ରିପୋର୍ଟ',
+    uploadNewReport: 'ନୂଆ ରିପୋର୍ଟ ଯୋଡନ୍ତୁ',
+    parametersExtracted: 'ତଥ୍ୟ ସଂଗୃହିତ',
+
+    anatomyExplorerTitle: '3D ଇଣ୍ଟରାକ୍ଟିଭ୍',
+    anatomyExplorerHighlight: 'ଅଙ୍ଗ ପ୍ରଦର୍ଶନୀ',
+    anatomyExplorerSubtitle: 'ଅଙ୍ଗଗୁଡ଼ିକୁ 3Dରେ ଦେଖନ୍ତୁ ଏବଂ ମ୍ୟାପ୍‌ରେ ବିଶେଷଜ୍ଞ ଡାକ୍ତର ଖୋଜନ୍ତୁ।',
+    searchSymptomPlaceholder: 'ଲକ୍ଷଣ ଖୋଜନ୍ତୁ (ଆଣ୍ଠୁ ଯନ୍ତ୍ରଣା, ଛାତି ଭାରୀ)...',
+    maleModel: 'ପୁରୁଷ ମଡେଲ',
+    femaleModel: 'ମହିଳା ମଡେଲ',
+    rotateTip: 'ଘୂରାଇବା ପାଇଁ ଟାଣନ୍ତୁ',
+    regionIdentifier: 'ଅଙ୍ଗ ଚିହ୍ନଟ',
+    commonSymptomsTitle: 'ସାଧାରଣ ଲକ୍ଷଣ',
+    suggestedQuestionsTitle: 'ଡାକ୍ତରଙ୍କୁ ପଚାରିବା ପ୍ରଶ୍ନ',
+    findNearbySpecialist: 'ମ୍ୟାପ୍‌ରେ ବିଶେଷଜ୍ଞ ଖୋଜନ୍ତୁ',
+    addQuestionsToPrepKit: 'କିଟ୍‌ରେ ପ୍ରଶ୍ନ ଯୋଡନ୍ତୁ',
+    illustrativeDisclaimer: 'କେବଳ ସୂଚନା ପାଇଁ।',
+
+    specialistLocatorTitle: 'ବିଶେଷଜ୍ଞ ସନ୍ଧାନ ଓ',
+    specialistLocatorHighlight: 'ଇଣ୍ଟରାକ୍ଟିଭ୍ ମ୍ୟାପ୍',
+    specialistLocatorSubtitle: 'ଲାଲ୍ ପିନ୍ ଚିହ୍ନ ସହିତ ନିକଟସ୍ଥ ଡାକ୍ତର ଓ କ୍ଲିନିକ୍ ମାନଚିତ୍ର।',
+    searchDoctorPlaceholder: 'ଡାକ୍ତର, ଡାକ୍ତରଖାନା ଖୋଜନ୍ତୁ...',
+    maxRadius: 'ଦୂରତା',
+    teleconsultation: 'ଭିଡିଓ ପରାମର୍ଶ',
+    bookSlot: 'ସ୍ଲଟ୍ ବୁକ୍ କରନ୍ତୁ',
+    consultationFee: 'ଫି',
+    nextAvailable: 'ଉପଲବ୍ଧ ସମୟ',
+    mapPinTitle: 'କ୍ଲିନିକାଲ୍ ମ୍ୟାପ୍',
+    mapPinSubtitle: 'ଲାଲ୍ ପିନ୍ ନିକଟସ୍ଥ ବିଶେଷଜ୍ଞଙ୍କୁ ସୂଚାଏ',
+
+    intakeTitle: 'ରିପୋର୍ଟ ଓ',
+    intakeHighlight: 'ଡକ୍ୟୁମେଣ୍ଟ ସ୍କାନ',
+    intakeSubtitle: 'ଲ୍ୟାବ୍ ରିପୋର୍ଟ ଏବଂ ଫଟୋ ସହଜରେ ସ୍କାନ କରନ୍ତୁ।',
+    quickTestPresets: 'ଡେମୋ ପରୀକ୍ଷା:',
+    dragDropTitle: 'ରିପୋର୍ଟ ଏଠାରେ ଛାଡ଼ନ୍ତୁ',
+    dragDropSubtitle: 'PDF କିମ୍ବା ଫଟୋ ଅପଲୋଡ କରନ୍ତୁ।',
+    runningOcr: 'OCR ସ୍କାନିଂ ଚାଲିଛି...',
+    saveToPatientRecord: 'ରେକର୍ଡରେ ସାଇତନ୍ତୁ',
+
+    timelineTitle: 'ଏକତ୍ରିତ ଜୀବନ',
+    timelineHighlight: 'ଟାଇମଲାଇନ୍',
+    timelineSubtitle: 'ସମସ୍ତ ରିପୋର୍ଟ ଗୋଟିଏ ଧାରାରେ।',
+    allEvents: 'ସମସ୍ତ ତଥ୍ୟ',
+    labReports: 'ଲ୍ୟାବ୍ ରିପୋର୍ଟ',
+    homeVitals: 'ଘରୋଇ ତଥ୍ୟ',
+    symptomJournal: 'ଲକ୍ଷଣ ଡାଏରୀ',
+
+    vitalsTitle: 'ଘରୋଇ ଭାଇଟାଲ୍ସ',
+    vitalsHighlight: 'ଟ୍ରାକର୍',
+    vitalsSubtitle: 'ରକ୍ତଚାପ ଏବଂ ସୁଗାର ନିୟମିତ ଲେଖନ୍ତୁ।',
+    photoOcrBannerTitle: 'ସ୍କ୍ରିନ୍ ଫଟୋରୁ ସିଧାସଳଖ OCR',
+    photoOcrBannerDesc: 'ଫଟୋ ଉଠାଇ ସଂଖ୍ୟା ଭରନ୍ତୁ।',
+    simulatePhotoCapture: 'ଫଟୋ ସ୍କାନ ଡେମୋ',
+    logMeasurement: 'ଦାଖଲ କରନ୍ତୁ',
+
+    journalTitle: 'ଲକ୍ଷଣ ଓ ସ୍ୱାସ୍ଥ୍ୟ',
+    journalHighlight: 'ଡାଏରୀ',
+    journalSubtitle: '୦-୧୦ ମାପରେ ଯନ୍ତ୍ରଣା ଲିପିବଦ୍ଧ କରନ୍ତୁ।',
+    severitySliderTitle: 'ତୀବ୍ରତା (୦-୧୦)',
+    medAdherenceTitle: 'ଔଷଧ ଖାଇଛନ୍ତି କି ନାହିଁ',
+    contextTagsTitle: 'ପ୍ରସଙ୍ଗ ଟ୍ୟାଗ୍',
+    saveJournalEntry: 'ସାଇତନ୍ତୁ',
+
+    trendsTitle: 'ସ୍ୱାସ୍ଥ୍ୟ ଧାରା ଓ',
+    trendsHighlight: 'ବିଶ୍ଳେଷଣ',
+    trendsSubtitle: 'ବିପି ଏବଂ ସୁଗାରର ସମୟାନୁକ୍ରମିକ ବିଶ୍ଳେଷଣ।',
+    trendDetection: 'ପ୍ରବୃତ୍ତି ଚିହ୍ନଟ',
+    anomalyDetection: 'ହଠାତ୍ ପରିବର୍ତ୍ତନ',
+    doctorVisitReadout: 'ଡାକ୍ତର ସାରାଂଶ',
+
+    prepKitTitle: 'ଡାକ୍ତର ସାକ୍ଷାତ',
+    prepKitHighlight: 'ପ୍ରସ୍ତੁତି କିଟ୍',
+    prepKitSubtitle: 'ଡାକ୍ତରଙ୍କୁ ପଚାରିବାକୁ ଥିବା ପ୍ରଶ୍ନ ପ୍ରସ୍ତୁତ କରନ୍ତୁ।',
+    step1Title: 'ଲକ୍ଷଣ',
+    step2Title: 'ସମୟ',
+    step3Title: 'ଔଷଧ',
+    step4Title: 'ପ୍ରଶ୍ନ ତାଲିକା',
+    synthesizeQuestionList: 'ପ୍ରଶ୍ନ ପ୍ରସ୍ତୁତ କରନ୍ତୁ',
+    printChecklist: 'ପ୍ରିଣ୍ଟ କରନ୍ତୁ',
+
+    chatbotTitle: 'ଚିକିତ୍ସା ଚାଟବଟ୍ —',
+    chatbotHighlight: 'ରୋଗୀ ସହାୟକ',
+    chatbotSubtitle: 'ଆପଣଙ୍କ ରିପୋର୍ଟ ଉପରେ ଆଧାରିତ ସରଳ ଉତ୍ତର।',
+    chatPlaceholder: 'ସ୍ୱାସ୍ଥ୍ୟ ବିଷୟରେ ପଚାରନ୍ତୁ...',
+    send: 'ପଠାନ୍ତୁ',
+    safetyNotice: 'ରୋଗ ନିର୍ଣ୍ଣୟ କରେ ନାହିଁ।',
+
+    packetTitle: 'ଡାକ୍ତର ସାକ୍ଷାତ',
+    packetHighlight: 'ପ୍ୟାକେଟ୍ (PDF)',
+    printSavePdf: 'ପ୍ରିଣ୍ଟ୍ / PDF ସାଇତନ୍ତୁ',
+    physician60SecNotice: 'ଡାକ୍ତରଙ୍କ ୬୦ ସେକେଣ୍ଡ୍ ଅବଲୋକନ ପାଇଁ',
+  }
+};
+
+export function getTranslation(lang: IndianLanguage): TranslationDictionary {
+  return TRANSLATIONS[lang] || TRANSLATIONS['en'];
+}
+
+export function speakText(text: string, lang: IndianLanguage = 'en') {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  const meta = LANGUAGE_METADATA[lang];
+  utterance.lang = meta ? meta.voiceLang : 'en-IN';
+  utterance.rate = 0.92;
+  utterance.pitch = 1.0;
+  window.speechSynthesis.speak(utterance);
+}
+
+export function stopSpeaking() {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+}
