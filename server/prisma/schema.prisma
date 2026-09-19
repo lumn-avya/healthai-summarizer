@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String           @id
+  email     String?          @unique
+  name      String?
+  createdAt DateTime         @default(now())
+  profile   PatientProfile?
+  reports   MedicalReport[]
+  vitals    VitalEntry[]
+  journal   JournalEntry[]
+  alerts    NotificationAlert[]
+}
+
+model PatientProfile {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  name                String
+  age                 Int
+  gender              String
+  dob                 String
+  bloodGroup          String
+  location            String
+  aboutNote           String
+  chronicConditions   Json
+  allergies           Json
+  ongoingMedications  Json
+  emergencyContact    Json
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  updatedAt           DateTime @updatedAt
+}
+
+model MedicalReport {
+  id                   String   @id @default(cuid())
+  userId               String
+  title                String
+  category             String
+  uploadDate           String
+  documentDate         String
+  facility             String
+  doctorName           String?
+  fileType             String
+  pageCount            Int      @default(1)
+  fileName             String
+  filePath             String?
+  rawTextPreview       String   @default("")
+  ocrConfidence        Float    @default(0)
+  aiSummary            String   @default("")
+  flaggedCount         Int      @default(0)
+  extractedParameters  Json     @default("[]")
+  createdAt            DateTime @default(now())
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, documentDate])
+}
+
+model VitalEntry {
+  id              String   @id @default(cuid())
+  userId          String
+  timestamp       DateTime
+  systolicBp      Int?
+  diastolicBp     Int?
+  glucose         Float?
+  glucoseContext  String?
+  weightKg        Float?
+  heartRate       Int?
+  spO2            Float?
+  temperatureC    Float?
+  source          String
+  notes           String?
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, timestamp])
+}
+
+model JournalEntry {
+  id                  String   @id @default(cuid())
+  userId              String
+  timestamp           DateTime
+  symptomSeverity     Int
+  primarySymptom      String
+  relatedOrganId      String?
+  contextTags         Json
+  medicationAdherence String
+  patientNote         String
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, timestamp])
+}
+
+model NotificationAlert {
+  id           String   @id @default(cuid())
+  userId       String
+  timestamp    DateTime @default(now())
+  type         String
+  title        String
+  message      String
+  read         Boolean  @default(false)
+  priority     String
+  actionLabel  String?
+  actionTarget String?
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, read])
+}
